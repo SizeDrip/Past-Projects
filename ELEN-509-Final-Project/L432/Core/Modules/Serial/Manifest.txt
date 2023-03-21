@@ -1,0 +1,19 @@
+Serial Module
+=======================
+Module Name: Serial
+Date Created: 12AUG2020
+Current Rev: 03.00.00
+Current Rev Date: 15DEC2022
+
+=======================
+Files:
+----------------
+serial.c
+serial_user.c
+serial.h
+serial_user.h
+manifest.txt
+readme.txt
+
+=======================
+
