@@ -1,0 +1,463 @@
+/*--- GATE-LEVEL RESULTS ---*/
+
+STARTING SMOKE TEST!!!!
+              155000: Testbench: Sending packet from 0 to 7, Data = deadbeef
+Sending packet @235000 [sa=0] [da=7] data=deadbeef
+Received deadbeef @1335000 and match found  
+$finish called from file "testbench.sv", line 123.
+
+*******************End of Simulation Report*******************
+
+Number of Errors =           0
+Number of unmatched packets =           0
+Port  0 [transmitted=  1] [received=  0] [expected=  0]
+Port  1 [transmitted=  0] [received=  0] [expected=  0]
+Port  2 [transmitted=  0] [received=  0] [expected=  0]
+Port  3 [transmitted=  0] [received=  0] [expected=  0]
+Port  4 [transmitted=  0] [received=  0] [expected=  0]
+Port  5 [transmitted=  0] [received=  0] [expected=  0]
+Port  6 [transmitted=  0] [received=  0] [expected=  0]
+Port  7 [transmitted=  0] [received=  1] [expected=  1]
+$finish at simulation time             10705000
+
+----
+
+STARTING 1-PORT TEST!!!!
+              155000: Testbench: Sending packet from 0 to 0, Data = 12341234
+Sending packet @235000 [sa=0] [da=0] data=12341234
+              705000: Testbench: Sending packet from 0 to 1, Data = deadbeef
+Sending packet @705000 [sa=0] [da=1] data=deadbeef
+             1175000: Testbench: Sending packet from 0 to 2, Data = 9876abcd
+Sending packet @1175000 [sa=0] [da=2] data=9876abcd
+Received 12341234 @1335000 and match found  
+             1645000: Testbench: Sending packet from 0 to 3, Data = 55555555
+Sending packet @1645000 [sa=0] [da=3] data=55555555
+Received deadbeef @1805000 and match found  
+             2115000: Testbench: Sending packet from 0 to 4, Data = cafecafe
+Received 9876abcd @2275000 and match found  
+Sending packet @2285000 [sa=0] [da=4] data=cafecafe
+Received 55555555 @2745000 and match found  
+             2755000: Testbench: Sending packet from 0 to 5, Data = abcddcba
+Sending packet @2925000 [sa=0] [da=5] data=abcddcba
+Received cafecafe @3385000 and match found  
+             3395000: Testbench: Sending packet from 0 to 6, Data = 54555050
+Sending packet @3395000 [sa=0] [da=6] data=54555050
+             3865000: Testbench: Sending packet from 0 to 7, Data = 00001111
+Sending packet @3865000 [sa=0] [da=7] data=00001111
+Received abcddcba @4025000 and match found  
+Received 54555050 @4495000 and match found  
+Received 00001111 @4965000 and match found  
+$finish called from file "testbench.sv", line 123.
+
+*******************End of Simulation Report*******************
+
+Number of Errors =           0
+Number of unmatched packets =           0
+Port  0 [transmitted=  8] [received=  0] [expected=  1]
+Port  1 [transmitted=  0] [received=  1] [expected=  1]
+Port  2 [transmitted=  0] [received=  1] [expected=  1]
+Port  3 [transmitted=  0] [received=  1] [expected=  1]
+Port  4 [transmitted=  0] [received=  1] [expected=  1]
+Port  5 [transmitted=  0] [received=  1] [expected=  1]
+Port  6 [transmitted=  0] [received=  1] [expected=  1]
+Port  7 [transmitted=  0] [received=  2] [expected=  1]
+$finish at simulation time             14335000
+
+----
+
+STARTING 4-PORT TEST!!!!
+              155000: Testbench: Sending packet from 0 to 3, Data = 12153524
+Sending packet @155000 [sa=0] [da=3] data=12153524
+              155000: Testbench: Sending packet from 1 to 2, Data = 8484d609
+Sending packet @155000 [sa=1] [da=2] data=8484d609
+              155000: Testbench: Sending packet from 2 to 1, Data = 06b97b0d
+              155000: Testbench: Sending packet from 3 to 0, Data = b2c28465
+Sending packet @155000 [sa=3] [da=0] data=b2c28465
+Sending packet @325000 [sa=2] [da=1] data=06b97b0d
+              625000: Testbench: Sending packet from 3 to 0, Data = 00f3e301
+              625000: Testbench: Sending packet from 1 to 2, Data = 3b23f176
+              625000: Testbench: Sending packet from 0 to 3, Data = 76d457ed
+Sending packet @715000 [sa=3] [da=0] data=00f3e301
+Sending packet @745000 [sa=0] [da=3] data=76d457ed
+Sending packet @795000 [sa=1] [da=2] data=3b23f176
+              795000: Testbench: Sending packet from 2 to 1, Data = 7cfde9f9
+Sending packet @795000 [sa=2] [da=1] data=7cfde9f9
+             1185000: Testbench: Sending packet from 3 to 0, Data = e2f784c5
+Sending packet @1185000 [sa=3] [da=0] data=e2f784c5
+             1215000: Testbench: Sending packet from 0 to 3, Data = 72aff7e5
+Sending packet @1215000 [sa=0] [da=3] data=72aff7e5
+Received b2c28465 @1255000 and match found  
+Received 8484d609 @1255000 and match found  
+Received 12153524 @1255000 and match found  
+             1265000: Testbench: Sending packet from 2 to 1, Data = 8932d612
+             1265000: Testbench: Sending packet from 1 to 2, Data = 793069f2
+Sending packet @1265000 [sa=1] [da=2] data=793069f2
+Sending packet @1455000 [sa=2] [da=1] data=8932d612
+             1655000: Testbench: Sending packet from 3 to 0, Data = f4007ae8
+Sending packet @1655000 [sa=3] [da=0] data=f4007ae8
+             1685000: Testbench: Sending packet from 0 to 3, Data = 2e58495c
+Sending packet @1685000 [sa=0] [da=3] data=2e58495c
+             1735000: Testbench: Sending packet from 1 to 2, Data = 96ab582d
+Sending packet @1735000 [sa=1] [da=2] data=96ab582d
+Received 00f3e301 @1815000 and match found  
+Received 76d457ed @1845000 and match found  
+Received 3b23f176 @1895000 and match found  
+             1925000: Testbench: Sending packet from 2 to 1, Data = b1ef6263
+Sending packet @2025000 [sa=2] [da=1] data=b1ef6263
+             2125000: Testbench: Sending packet from 3 to 0, Data = c03b2280
+             2155000: Testbench: Sending packet from 0 to 3, Data = 557845aa
+Sending packet @2155000 [sa=0] [da=3] data=557845aa
+             2205000: Testbench: Sending packet from 1 to 2, Data = cb203e96
+Sending packet @2205000 [sa=1] [da=2] data=cb203e96
+Sending packet @2285000 [sa=3] [da=0] data=c03b2280
+Received e2f784c5 @2285000 and match found  
+Received 72aff7e5 @2315000 and match found  
+Received 793069f2 @2365000 and match found  
+             2495000: Testbench: Sending packet from 2 to 1, Data = 86bc380d
+Sending packet @2495000 [sa=2] [da=1] data=86bc380d
+             2625000: Testbench: Sending packet from 0 to 3, Data = 359fdd6b
+Sending packet @2625000 [sa=0] [da=3] data=359fdd6b
+             2675000: Testbench: Sending packet from 1 to 2, Data = 81174a02
+Sending packet @2675000 [sa=1] [da=2] data=81174a02
+             2755000: Testbench: Sending packet from 3 to 0, Data = 0effe91d
+Sending packet @2755000 [sa=3] [da=0] data=0effe91d
+Received f4007ae8 @2755000 and match found  
+Received 2e58495c @2785000 and match found  
+Received 96ab582d @2835000 and match found  
+             2965000: Testbench: Sending packet from 2 to 1, Data = 11844923
+Sending packet @3065000 [sa=2] [da=1] data=11844923
+             3095000: Testbench: Sending packet from 0 to 3, Data = e5730aca
+Sending packet @3095000 [sa=0] [da=3] data=e5730aca
+             3145000: Testbench: Sending packet from 1 to 2, Data = 7968bdf2
+             3225000: Testbench: Sending packet from 3 to 0, Data = 20c4b341
+Sending packet @3225000 [sa=3] [da=0] data=20c4b341
+Sending packet @3245000 [sa=1] [da=2] data=7968bdf2
+Received 557845aa @3255000 and match found  
+Received cb203e96 @3305000 and match found  
+             3535000: Testbench: Sending packet from 2 to 1, Data = 3c20f378
+Sending packet @3535000 [sa=2] [da=1] data=3c20f378
+             3565000: Testbench: Sending packet from 0 to 3, Data = 75c50deb
+Sending packet @3625000 [sa=0] [da=3] data=75c50deb
+             3695000: Testbench: Sending packet from 3 to 0, Data = 634bf9c6
+             3715000: Testbench: Sending packet from 1 to 2, Data = de7502bc
+Received 359fdd6b @3725000 and match found  
+Sending packet @3755000 [sa=3] [da=0] data=634bf9c6
+Received 81174a02 @3775000 and match found  
+Sending packet @3855000 [sa=1] [da=2] data=de7502bc
+             4005000: Testbench: Sending packet from 2 to 1, Data = 85d79a0b
+Sending packet @4005000 [sa=2] [da=1] data=85d79a0b
+             4095000: Testbench: Sending packet from 0 to 3, Data = 42f24185
+Received e5730aca @4195000 and match found  
+             4225000: Testbench: Sending packet from 3 to 0, Data = 9dcc603b
+Sending packet @4245000 [sa=0] [da=3] data=42f24185
+             4325000: Testbench: Sending packet from 1 to 2, Data = bf23327e
+Sending packet @4335000 [sa=1] [da=2] data=bf23327e
+Received 7968bdf2 @4345000 and match found  
+Sending packet @4365000 [sa=3] [da=0] data=9dcc603b
+             4475000: Testbench: Sending packet from 2 to 1, Data = 78d99bf1
+Sending packet @4485000 [sa=2] [da=1] data=78d99bf1
+Received c03b2280 @4665000 and match found  
+             4715000: Testbench: Sending packet from 0 to 3, Data = 31230762
+Sending packet @4795000 [sa=0] [da=3] data=31230762
+             4805000: Testbench: Sending packet from 1 to 2, Data = 4fa1559f
+             4835000: Testbench: Sending packet from 3 to 0, Data = 7c6da9f8
+Sending packet @4835000 [sa=3] [da=0] data=7c6da9f8
+Sending packet @4955000 [sa=1] [da=2] data=4fa1559f
+             4955000: Testbench: Sending packet from 2 to 1, Data = cfc4569f
+Sending packet @4955000 [sa=2] [da=1] data=cfc4569f
+Received de7502bc @4955000 and match found  
+Received 0effe91d @4995000 and match found  
+Received 20c4b341 @5325000 and match found  
+Received bf23327e @5435000 and match found  
+Received 634bf9c6 @5655000 and match found  
+Received 06b97b0d @5905000 and match found  
+Received 9dcc603b @5985000 and match found  
+Received 7cfde9f9 @6235000 and match found  
+Received 7c6da9f8 @6315000 and match found  
+Received 8932d612 @6565000 and match found  
+Received b1ef6263 @6895000 and match found  
+Received 86bc380d @7225000 and match found  
+Received 75c50deb @7285000 and match found  
+Received 11844923 @7555000 and match found  
+Received 42f24185 @7615000 and match found  
+Received 3c20f378 @7885000 and match found  
+Received 31230762 @7945000 and match found  
+Received 85d79a0b @8215000 and match found  
+Received 78d99bf1 @8545000 and match found  
+Received cfc4569f @8875000 and match found  
+Received 4fa1559f @9255000 and match found  
+$finish called from file "testbench.sv", line 123.
+
+*******************End of Simulation Report*******************
+
+Number of Errors =           0
+Number of unmatched packets =           0
+Port  0 [transmitted= 10] [received= 10] [expected= 10]
+Port  1 [transmitted= 10] [received= 10] [expected= 10]
+Port  2 [transmitted= 10] [received= 10] [expected= 10]
+Port  3 [transmitted= 10] [received= 10] [expected= 10]
+Port  4 [transmitted=  0] [received=  0] [expected=  0]
+Port  5 [transmitted=  0] [received=  0] [expected=  0]
+Port  6 [transmitted=  0] [received=  0] [expected=  0]
+Port  7 [transmitted=  0] [received=  0] [expected=  0]
+$finish at simulation time             15425000
+
+----
+
+STARTING 8-PORT TEST!!!!
+              155000: Testbench: Sending packet from 0 to 3, Data = 12153524
+Sending packet @155000 [sa=0] [da=3] data=12153524
+              155000: Testbench: Sending packet from 1 to 2, Data = 8484d609
+Sending packet @155000 [sa=1] [da=2] data=8484d609
+              155000: Testbench: Sending packet from 2 to 1, Data = 06b97b0d
+              155000: Testbench: Sending packet from 3 to 0, Data = b2c28465
+Sending packet @155000 [sa=3] [da=0] data=b2c28465
+              155000: Testbench: Sending packet from 4 to 5, Data = 00f3e301
+              155000: Testbench: Sending packet from 5 to 4, Data = 3b23f176
+              155000: Testbench: Sending packet from 6 to 7, Data = 76d457ed
+              155000: Testbench: Sending packet from 7 to 6, Data = 7cfde9f9
+Sending packet @155000 [sa=7] [da=6] data=7cfde9f9
+Sending packet @245000 [sa=4] [da=5] data=00f3e301
+Sending packet @275000 [sa=6] [da=7] data=76d457ed
+Sending packet @325000 [sa=5] [da=4] data=3b23f176
+Sending packet @325000 [sa=2] [da=1] data=06b97b0d
+              625000: Testbench: Sending packet from 7 to 6, Data = e2f784c5
+Sending packet @625000 [sa=7] [da=6] data=e2f784c5
+              625000: Testbench: Sending packet from 3 to 0, Data = 72aff7e5
+Sending packet @625000 [sa=3] [da=0] data=72aff7e5
+              625000: Testbench: Sending packet from 1 to 2, Data = 8932d612
+              625000: Testbench: Sending packet from 0 to 3, Data = 793069f2
+Sending packet @625000 [sa=0] [da=3] data=793069f2
+              715000: Testbench: Sending packet from 4 to 5, Data = f4007ae8
+Sending packet @715000 [sa=4] [da=5] data=f4007ae8
+              745000: Testbench: Sending packet from 6 to 7, Data = 2e58495c
+Sending packet @745000 [sa=6] [da=7] data=2e58495c
+              795000: Testbench: Sending packet from 5 to 4, Data = 96ab582d
+Sending packet @795000 [sa=5] [da=4] data=96ab582d
+              795000: Testbench: Sending packet from 2 to 1, Data = b1ef6263
+Sending packet @815000 [sa=1] [da=2] data=8932d612
+Sending packet @895000 [sa=2] [da=1] data=b1ef6263
+             1095000: Testbench: Sending packet from 0 to 3, Data = c03b2280
+             1095000: Testbench: Sending packet from 3 to 0, Data = 557845aa
+Sending packet @1095000 [sa=3] [da=0] data=557845aa
+             1095000: Testbench: Sending packet from 7 to 6, Data = cb203e96
+Sending packet @1095000 [sa=7] [da=6] data=cb203e96
+             1185000: Testbench: Sending packet from 4 to 5, Data = 86bc380d
+Sending packet @1185000 [sa=4] [da=5] data=86bc380d
+             1215000: Testbench: Sending packet from 6 to 7, Data = 359fdd6b
+Sending packet @1215000 [sa=6] [da=7] data=359fdd6b
+Sending packet @1255000 [sa=0] [da=3] data=c03b2280
+Received b2c28465 @1255000 and match found  
+Received 8484d609 @1255000 and match found  
+Received 12153524 @1255000 and match found  
+Received 7cfde9f9 @1255000 and match found  
+             1265000: Testbench: Sending packet from 5 to 4, Data = 81174a02
+Sending packet @1265000 [sa=5] [da=4] data=81174a02
+             1285000: Testbench: Sending packet from 1 to 2, Data = 0effe91d
+Sending packet @1285000 [sa=1] [da=2] data=0effe91d
+Received 00f3e301 @1345000 and match found  
+             1365000: Testbench: Sending packet from 2 to 1, Data = 11844923
+Sending packet @1465000 [sa=2] [da=1] data=11844923
+             1565000: Testbench: Sending packet from 7 to 6, Data = e5730aca
+Sending packet @1565000 [sa=7] [da=6] data=e5730aca
+             1565000: Testbench: Sending packet from 3 to 0, Data = 7968bdf2
+             1655000: Testbench: Sending packet from 4 to 5, Data = 20c4b341
+Sending packet @1655000 [sa=4] [da=5] data=20c4b341
+Sending packet @1665000 [sa=3] [da=0] data=7968bdf2
+             1685000: Testbench: Sending packet from 6 to 7, Data = 3c20f378
+Sending packet @1685000 [sa=6] [da=7] data=3c20f378
+             1725000: Testbench: Sending packet from 0 to 3, Data = 75c50deb
+Received 72aff7e5 @1725000 and match found  
+Received 793069f2 @1725000 and match found  
+Received e2f784c5 @1725000 and match found  
+             1735000: Testbench: Sending packet from 5 to 4, Data = 634bf9c6
+             1755000: Testbench: Sending packet from 1 to 2, Data = de7502bc
+Sending packet @1785000 [sa=0] [da=3] data=75c50deb
+Sending packet @1795000 [sa=5] [da=4] data=634bf9c6
+Received f4007ae8 @1815000 and match found  
+Sending packet @1895000 [sa=1] [da=2] data=de7502bc
+Received 8932d612 @1915000 and match found  
+             1935000: Testbench: Sending packet from 2 to 1, Data = 85d79a0b
+Sending packet @1935000 [sa=2] [da=1] data=85d79a0b
+             2035000: Testbench: Sending packet from 7 to 6, Data = 42f24185
+             2125000: Testbench: Sending packet from 4 to 5, Data = 9dcc603b
+             2135000: Testbench: Sending packet from 3 to 0, Data = bf23327e
+Sending packet @2145000 [sa=3] [da=0] data=bf23327e
+             2155000: Testbench: Sending packet from 6 to 7, Data = 78d99bf1
+Sending packet @2165000 [sa=6] [da=7] data=78d99bf1
+Sending packet @2185000 [sa=7] [da=6] data=42f24185
+Received 557845aa @2195000 and match found  
+Received cb203e96 @2195000 and match found  
+             2255000: Testbench: Sending packet from 0 to 3, Data = 31230762
+Sending packet @2265000 [sa=4] [da=5] data=9dcc603b
+             2265000: Testbench: Sending packet from 5 to 4, Data = 4fa1559f
+Received 86bc380d @2285000 and match found  
+Sending packet @2335000 [sa=0] [da=3] data=31230762
+             2365000: Testbench: Sending packet from 1 to 2, Data = 7c6da9f8
+Sending packet @2365000 [sa=1] [da=2] data=7c6da9f8
+Received 0effe91d @2385000 and match found  
+             2405000: Testbench: Sending packet from 2 to 1, Data = cfc4569f
+Sending packet @2405000 [sa=2] [da=1] data=cfc4569f
+Sending packet @2415000 [sa=5] [da=4] data=4fa1559f
+             2615000: Testbench: Sending packet from 3 to 0, Data = adcbc05b
+             2635000: Testbench: Sending packet from 6 to 7, Data = a4ae3249
+Sending packet @2635000 [sa=6] [da=7] data=a4ae3249
+             2655000: Testbench: Sending packet from 7 to 6, Data = ebfec0d7
+Sending packet @2655000 [sa=7] [da=6] data=ebfec0d7
+Received 76d457ed @2655000 and match found  
+Received e5730aca @2665000 and match found  
+Received 3b23f176 @2705000 and match found  
+             2735000: Testbench: Sending packet from 4 to 5, Data = 4b212f96
+Received 7968bdf2 @2765000 and match found  
+Sending packet @2775000 [sa=4] [da=5] data=4b212f96
+Sending packet @2785000 [sa=3] [da=0] data=adcbc05b
+             2805000: Testbench: Sending packet from 0 to 3, Data = e12ccec2
+             2835000: Testbench: Sending packet from 1 to 2, Data = bb825a77
+Sending packet @2845000 [sa=0] [da=3] data=e12ccec2
+             2875000: Testbench: Sending packet from 2 to 1, Data = 090cdb12
+Sending packet @2875000 [sa=2] [da=1] data=090cdb12
+Sending packet @2885000 [sa=1] [da=2] data=bb825a77
+             2885000: Testbench: Sending packet from 5 to 4, Data = 36e5816d
+Received de7502bc @2995000 and match found  
+Sending packet @3015000 [sa=5] [da=4] data=36e5816d
+Received 96ab582d @3035000 and match found  
+             3105000: Testbench: Sending packet from 6 to 7, Data = 0fd28f1f
+Sending packet @3105000 [sa=6] [da=7] data=0fd28f1f
+             3125000: Testbench: Sending packet from 7 to 6, Data = 42d92f85
+Sending packet @3125000 [sa=7] [da=6] data=42d92f85
+             3245000: Testbench: Sending packet from 4 to 5, Data = 2dda595b
+Received bf23327e @3245000 and match found  
+             3255000: Testbench: Sending packet from 3 to 0, Data = 9ff2ae3f
+Received 42f24185 @3285000 and match found  
+             3315000: Testbench: Sending packet from 0 to 3, Data = 2c156358
+Sending packet @3315000 [sa=0] [da=3] data=2c156358
+             3345000: Testbench: Sending packet from 2 to 1, Data = c71a0c8e
+Sending packet @3345000 [sa=2] [da=1] data=c71a0c8e
+Sending packet @3355000 [sa=3] [da=0] data=9ff2ae3f
+             3355000: Testbench: Sending packet from 1 to 2, Data = 7d3599fa
+Sending packet @3355000 [sa=1] [da=2] data=7d3599fa
+Received 81174a02 @3365000 and match found  
+Sending packet @3375000 [sa=4] [da=5] data=2dda595b
+Received 20c4b341 @3395000 and match found  
+Received 7c6da9f8 @3465000 and match found  
+             3485000: Testbench: Sending packet from 5 to 4, Data = 39961773
+Sending packet @3485000 [sa=5] [da=4] data=39961773
+             3575000: Testbench: Sending packet from 6 to 7, Data = 9799a82f
+Sending packet @3575000 [sa=6] [da=7] data=9799a82f
+             3595000: Testbench: Sending packet from 7 to 6, Data = afd8565f
+Received c03b2280 @3635000 and match found  
+Received 9dcc603b @3725000 and match found  
+Sending packet @3755000 [sa=7] [da=6] data=afd8565f
+Received ebfec0d7 @3755000 and match found  
+             3785000: Testbench: Sending packet from 0 to 3, Data = 7bf8fdf7
+Sending packet @3785000 [sa=0] [da=3] data=7bf8fdf7
+             3815000: Testbench: Sending packet from 2 to 1, Data = f3091ae6
+             3825000: Testbench: Sending packet from 1 to 2, Data = 14cfc129
+Sending packet @3825000 [sa=1] [da=2] data=14cfc129
+             3825000: Testbench: Sending packet from 3 to 0, Data = ed536cda
+Sending packet @3825000 [sa=3] [da=0] data=ed536cda
+             3845000: Testbench: Sending packet from 4 to 5, Data = da8ae2b5
+Sending packet @3845000 [sa=4] [da=5] data=da8ae2b5
+Sending packet @3955000 [sa=2] [da=1] data=f3091ae6
+             3955000: Testbench: Sending packet from 5 to 4, Data = 3cf11979
+Received 75c50deb @3965000 and match found  
+Received 06b97b0d @3985000 and match found  
+Received bb825a77 @3985000 and match found  
+             4045000: Testbench: Sending packet from 6 to 7, Data = e8740cd0
+Received 4b212f96 @4055000 and match found  
+Sending packet @4115000 [sa=5] [da=4] data=3cf11979
+Sending packet @4225000 [sa=6] [da=7] data=e8740cd0
+             4225000: Testbench: Sending packet from 7 to 6, Data = 55f6adab
+Received 42d92f85 @4225000 and match found  
+             4255000: Testbench: Sending packet from 0 to 3, Data = 6e5daddc
+Sending packet @4255000 [sa=0] [da=3] data=6e5daddc
+             4295000: Testbench: Sending packet from 3 to 0, Data = fedf72fd
+Sending packet @4295000 [sa=3] [da=0] data=fedf72fd
+             4295000: Testbench: Sending packet from 1 to 2, Data = 2b0eed56
+Received 31230762 @4295000 and match found  
+             4315000: Testbench: Sending packet from 4 to 5, Data = b3d97667
+Sending packet @4315000 [sa=4] [da=5] data=b3d97667
+Sending packet @4355000 [sa=1] [da=2] data=2b0eed56
+Sending packet @4365000 [sa=7] [da=6] data=55f6adab
+             4425000: Testbench: Sending packet from 2 to 1, Data = 5b6fb9b6
+Sending packet @4425000 [sa=2] [da=1] data=5b6fb9b6
+Received 7d3599fa @4455000 and match found  
+Received 2dda595b @4475000 and match found  
+             4585000: Testbench: Sending packet from 5 to 4, Data = 3cd18779
+Sending packet @4585000 [sa=5] [da=4] data=3cd18779
+Received e12ccec2 @4625000 and match found  
+             4695000: Testbench: Sending packet from 6 to 7, Data = 4a74bf94
+             4725000: Testbench: Sending packet from 0 to 3, Data = 823f2c04
+Sending packet @4725000 [sa=0] [da=3] data=823f2c04
+             4765000: Testbench: Sending packet from 3 to 0, Data = 6dcb69db
+Sending packet @4765000 [sa=3] [da=0] data=6dcb69db
+             4785000: Testbench: Sending packet from 4 to 5, Data = 6cb0b7d9
+Sending packet @4785000 [sa=4] [da=5] data=6cb0b7d9
+Sending packet @4805000 [sa=6] [da=7] data=4a74bf94
+             4825000: Testbench: Sending packet from 1 to 2, Data = bb45e276
+             4835000: Testbench: Sending packet from 7 to 6, Data = 5b172db6
+Received afd8565f @4855000 and match found  
+             4895000: Testbench: Sending packet from 2 to 1, Data = a3071a46
+Sending packet @4925000 [sa=1] [da=2] data=bb45e276
+Received 14cfc129 @4925000 and match found  
+Received da8ae2b5 @4945000 and match found  
+Received b1ef6263 @4955000 and match found  
+Received 2c156358 @4955000 and match found  
+Sending packet @4965000 [sa=7] [da=6] data=5b172db6
+Received 634bf9c6 @4975000 and match found  
+Sending packet @5015000 [sa=2] [da=1] data=a3071a46
+             5055000: Testbench: Sending packet from 5 to 4, Data = 7bd261f7
+Sending packet @5065000 [sa=5] [da=4] data=7bd261f7
+Received 11844923 @5285000 and match found  
+Received 7bf8fdf7 @5285000 and match found  
+Received 4fa1559f @5305000 and match found  
+Received 55f6adab @5465000 and match found  
+Received 85d79a0b @5615000 and match found  
+Received 6e5daddc @5615000 and match found  
+Received 36e5816d @5635000 and match found  
+Received cfc4569f @5945000 and match found  
+Received 823f2c04 @5945000 and match found  
+Received 39961773 @5965000 and match found  
+Received 5b172db6 @6065000 and match found  
+Received 090cdb12 @6275000 and match found  
+Received 3cf11979 @6295000 and match found  
+Received adcbc05b @6445000 and match found  
+Received c71a0c8e @6605000 and match found  
+Received 3cd18779 @6625000 and match found  
+Received 9ff2ae3f @6775000 and match found  
+Received 2e58495c @6825000 and match found  
+Received f3091ae6 @6935000 and match found  
+Received 7bd261f7 @6955000 and match found  
+Received ed536cda @7105000 and match found  
+Received 359fdd6b @7155000 and match found  
+Received 5b6fb9b6 @7265000 and match found  
+Received b3d97667 @7335000 and match found  
+Received fedf72fd @7435000 and match found  
+Received 3c20f378 @7485000 and match found  
+Received a3071a46 @7595000 and match found  
+Received 6cb0b7d9 @7665000 and match found  
+Received 6dcb69db @7765000 and match found  
+Received 78d99bf1 @7815000 and match found  
+Received 2b0eed56 @8015000 and match found  
+Received a4ae3249 @8145000 and match found  
+Received bb45e276 @8345000 and match found  
+Received 0fd28f1f @8475000 and match found  
+Received 9799a82f @8805000 and match found  
+Received e8740cd0 @9135000 and match found  
+Received 4a74bf94 @9465000 and match found  
+$finish called from file "testbench.sv", line 123.
+
+*******************End of Simulation Report*******************
+
+Number of Errors =           0
+Number of unmatched packets =           0
+Port  0 [transmitted= 10] [received= 10] [expected= 10]
+Port  1 [transmitted= 10] [received= 10] [expected= 10]
+Port  2 [transmitted= 10] [received= 10] [expected= 10]
+Port  3 [transmitted= 10] [received= 10] [expected= 10]
+Port  4 [transmitted= 10] [received= 10] [expected= 10]
+Port  5 [transmitted= 10] [received= 10] [expected= 10]
+Port  6 [transmitted= 10] [received= 10] [expected= 10]
+Port  7 [transmitted= 10] [received= 10] [expected= 10]
+$finish at simulation time             15535000
+

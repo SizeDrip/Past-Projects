@@ -1,0 +1,1174 @@
+/*--- GATE SYNTHESIS RESULTS ---*/
+
+dc_shell> set link_library {* lsi_10k.db dw_foundation.sldb}
+* lsi_10k.db dw_foundation.sldb
+dc_shell> set target_library {lsi_10k.db}
+lsi_10k.db
+dc_shell> analyze -format sverilog { router.v portin.v fifo.v switch_fabric.v portout.v  }
+Running PRESTO HDLC
+Compiling source file ./router.v
+Compiling source file ./portin.v
+Warning:  ./portin.v:18: The construct 'declaration initial assignment' is not supported in synthesis; it is ignored. (VER-708)
+Compiling source file ./fifo.v
+Warning:  Little argument or return value checking implemented for system task or function '$time'. (VER-209)
+Warning:  ./portin.v:73: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Compiling source file ./switch_fabric.v
+Warning:  ./fifo.v:39: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  ./fifo.v:48: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Compiling source file ./portout.v
+Warning:  ./switch_fabric.v:44: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  ./portout.v:32: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  ./portout.v:48: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Presto compilation completed successfully.
+Loading db file '/opt/synopsys-2019/app/syn/Q-2019.12-SP1/libraries/syn/lsi_10k.db'
+Loading db file '/opt/synopsys-2019/app/syn/Q-2019.12-SP1/libraries/syn/dw_foundation.sldb'
+1
+dc_shell> elaborate router
+Loading db file '/opt/synopsys-2019/app/syn/Q-2019.12-SP1/libraries/syn/gtech.db'
+Loading db file '/opt/synopsys-2019/app/syn/Q-2019.12-SP1/libraries/syn/standard.sldb'
+  Loading link library 'lsi_10k'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully. (router)
+Elaborated 1 design.
+Current design is now 'router'.
+Information: Building the design 'portin'. (HDL-193)
+Warning:  Little argument or return value checking implemented for system task or function '$time'. (VER-209)
+Warning:  ./portin.v:73: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+$display output: : -- PORTIN COMPLETE -- Portin: Address = 0000000000000000, Payload = ?, Valid = ??
+
+Statistics for case statements in always block at line 31 in file
+	'./portin.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            41            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine portin line 23 in file
+		'./portin.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   di_latched_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine portin line 31 in file
+		'./portin.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+|       state_reg        | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  addr_from_input_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| payload_from_input_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   vld_from_input_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     addr_count_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   payload_count_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+==================================================================================
+Presto compilation completed successfully. (portin)
+Information: Building the design 'fifo'. (HDL-193)
+Warning:  Little argument or return value checking implemented for system task or function '$time'. (VER-209)
+Warning:  ./fifo.v:39: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  ./fifo.v:48: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  ./fifo.v:38: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./fifo.v:47: signed to unsigned conversion occurs. (VER-318)
+$display output: : FIFO Write: Data = 0000000000000000, Write Ptr = ?, Count = ??
+$display output: : FIFO Read: Data = 0000000000000000, Read Ptr = ?, Count = ??
+
+Inferred memory devices in process
+	in routine fifo line 20 in file
+		'./fifo.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     buffer_reg      | Flip-flop |  320  |  Y  | N  | Y  | N  | N  | N  | N  |
+|    write_ptr_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    read_ptr_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      count_reg      | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      empty_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|      full_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    data_out_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  delay_counter_reg  | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|  delay_counter_reg  | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fifo)
+Information: Building the design 'portout'. (HDL-193)
+Warning:  Little argument or return value checking implemented for system task or function '$time'. (VER-209)
+Warning:  ./portout.v:32: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  ./portout.v:48: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+$display output: : Portout: Din = 0000000000000000?
+$display output: : Portout: Serialization of 0000000000000000 completed.?
+
+Inferred memory devices in process
+	in routine portout line 18 in file
+		'./portout.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      dout_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   vld_latched_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      temp_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      count_reg      | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       pop_reg       | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|     frame_n_reg     | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|     valid_n_reg     | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|      state_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|    portout/41    |   32   |    1    |      5       |
+======================================================
+Presto compilation completed successfully. (portout)
+Information: Building the design 'switch_fabric'. (HDL-193)
+Warning:  Little argument or return value checking implemented for system task or function '$time'. (VER-209)
+Warning:  ./switch_fabric.v:44: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+$display output: : Switch Routing: From Input 00 to Address 00000000, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000001, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000002, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000003, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000004, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000005, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000006, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000007, Data = ?, Latched Data = ????????, Valido_n = 1?
+
+Inferred memory devices in process
+	in routine switch_fabric line 15 in file
+		'./switch_fabric.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+| fifo_data_out_latched_reg | Flip-flop |  256  |  Y  | N  | Y  | N  | N  | N  | N  |
+|       valido_n_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|         dout_reg          | Flip-flop |  256  |  Y  | N  | Y  | N  | N  | N  | N  |
+=====================================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+======================================================
+Presto compilation completed successfully. (switch_fabric)
+1
+dc_shell> create_clock clock -period 25
+1
+dc_shell> set_max_area 25000
+1
+dc_shell> set_input_delay -clock clock 0 [all_inputs]
+1
+dc_shell> set_output_delay -clock clock 0 [all_outputs]
+1
+dc_shell> compile
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | Q-2019.12-DWBB_201912.1 |     *     |
+| Licensed DW Building Blocks        | Q-2019.12-DWBB_201912.1 |     *     |
+============================================================================
+
+
+Information: There are 23 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'switch_fabric'
+Information: Added key list 'DesignWare' to design 'switch_fabric'. (DDB-72)
+  Processing 'portout_0'
+  Processing 'fifo_0'
+  Processing 'portin_0'
+Information: Added key list 'DesignWare' to design 'portin_0'. (DDB-72)
+Information: The register 'addr_from_input_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_count_reg[2]' is a constant and will be removed. (OPT-1206)
+  Processing 'router'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'portout_1_DW01_inc_0_DW01_inc_1'
+  Processing 'fifo_1_DW01_sub_0'
+  Mapping 'fifo_1_DW_cmp_0'
+  Processing 'fifo_1_DW_div_uns_0'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_1_DW01_inc_0_DW01_inc_2'
+  Processing 'fifo_1_DW01_add_0'
+  Mapping 'fifo_1_DW_cmp_1'
+  Processing 'fifo_1_DW_div_uns_1'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_1_DW01_inc_1_DW01_inc_3'
+  Processing 'fifo_1_DW01_dec_0'
+  Processing 'portin_1_DW01_inc_0_DW01_inc_4'
+  Processing 'portout_2_DW01_inc_0_DW01_inc_5'
+  Processing 'fifo_2_DW01_sub_0_DW01_sub_1'
+  Mapping 'fifo_2_DW_cmp_0'
+  Processing 'fifo_2_DW_div_uns_0_DW_div_uns_2'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_2_DW01_inc_0_DW01_inc_6'
+  Processing 'fifo_2_DW01_add_0_DW01_add_1'
+  Mapping 'fifo_2_DW_cmp_1'
+  Processing 'fifo_2_DW_div_uns_1_DW_div_uns_3'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_2_DW01_inc_1_DW01_inc_7'
+  Processing 'fifo_2_DW01_dec_0_DW01_dec_1'
+  Processing 'portin_2_DW01_inc_0_DW01_inc_8'
+  Processing 'portout_3_DW01_inc_0_DW01_inc_9'
+  Processing 'fifo_3_DW01_sub_0_DW01_sub_2'
+  Mapping 'fifo_3_DW_cmp_0'
+  Processing 'fifo_3_DW_div_uns_0_DW_div_uns_4'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_3_DW01_inc_0_DW01_inc_10'
+  Processing 'fifo_3_DW01_add_0_DW01_add_2'
+  Mapping 'fifo_3_DW_cmp_1'
+  Processing 'fifo_3_DW_div_uns_1_DW_div_uns_5'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_3_DW01_inc_1_DW01_inc_11'
+  Processing 'fifo_3_DW01_dec_0_DW01_dec_2'
+  Processing 'portin_3_DW01_inc_0_DW01_inc_12'
+  Processing 'portout_4_DW01_inc_0_DW01_inc_13'
+  Processing 'fifo_4_DW01_sub_0_DW01_sub_3'
+  Mapping 'fifo_4_DW_cmp_0'
+  Processing 'fifo_4_DW_div_uns_0_DW_div_uns_6'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_4_DW01_inc_0_DW01_inc_14'
+  Processing 'fifo_4_DW01_add_0_DW01_add_3'
+  Mapping 'fifo_4_DW_cmp_1'
+  Processing 'fifo_4_DW_div_uns_1_DW_div_uns_7'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_4_DW01_inc_1_DW01_inc_15'
+  Processing 'fifo_4_DW01_dec_0_DW01_dec_3'
+  Processing 'portin_4_DW01_inc_0_DW01_inc_16'
+  Processing 'portout_5_DW01_inc_0_DW01_inc_17'
+  Processing 'fifo_5_DW01_sub_0_DW01_sub_4'
+  Mapping 'fifo_5_DW_cmp_0'
+  Processing 'fifo_5_DW_div_uns_0_DW_div_uns_8'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_5_DW01_inc_0_DW01_inc_18'
+  Processing 'fifo_5_DW01_add_0_DW01_add_4'
+  Mapping 'fifo_5_DW_cmp_1'
+  Processing 'fifo_5_DW_div_uns_1_DW_div_uns_9'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_5_DW01_inc_1_DW01_inc_19'
+  Processing 'fifo_5_DW01_dec_0_DW01_dec_4'
+  Processing 'portin_5_DW01_inc_0_DW01_inc_20'
+  Processing 'portout_6_DW01_inc_0_DW01_inc_21'
+  Processing 'fifo_6_DW01_sub_0_DW01_sub_5'
+  Mapping 'fifo_6_DW_cmp_0'
+  Processing 'fifo_6_DW_div_uns_0_DW_div_uns_10'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_6_DW01_inc_0_DW01_inc_22'
+  Processing 'fifo_6_DW01_add_0_DW01_add_5'
+  Mapping 'fifo_6_DW_cmp_1'
+  Processing 'fifo_6_DW_div_uns_1_DW_div_uns_11'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_6_DW01_inc_1_DW01_inc_23'
+  Processing 'fifo_6_DW01_dec_0_DW01_dec_5'
+  Processing 'portin_6_DW01_inc_0_DW01_inc_24'
+  Processing 'portout_7_DW01_inc_0_DW01_inc_25'
+  Processing 'fifo_7_DW01_sub_0_DW01_sub_6'
+  Mapping 'fifo_7_DW_cmp_0'
+  Processing 'fifo_7_DW_div_uns_0_DW_div_uns_12'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_7_DW01_inc_0_DW01_inc_26'
+  Processing 'fifo_7_DW01_add_0_DW01_add_6'
+  Mapping 'fifo_7_DW_cmp_1'
+  Processing 'fifo_7_DW_div_uns_1_DW_div_uns_13'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_7_DW01_inc_1_DW01_inc_27'
+  Processing 'fifo_7_DW01_dec_0_DW01_dec_6'
+  Processing 'portin_7_DW01_inc_0_DW01_inc_28'
+  Processing 'portout_0_DW01_inc_0_DW01_inc_29'
+  Processing 'fifo_0_DW01_sub_0_DW01_sub_7'
+  Mapping 'fifo_0_DW_cmp_0'
+  Processing 'fifo_0_DW_div_uns_0_DW_div_uns_14'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_0_DW01_inc_0_DW01_inc_30'
+  Processing 'fifo_0_DW01_add_0_DW01_add_7'
+  Mapping 'fifo_0_DW_cmp_1'
+  Processing 'fifo_0_DW_div_uns_1_DW_div_uns_15'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_0_DW01_inc_1_DW01_inc_31'
+  Processing 'fifo_0_DW01_dec_0_DW01_dec_7'
+  Processing 'portin_0_DW01_inc_0_DW01_inc_32'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'fifo_1'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_2'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_3'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_4'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_5'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_6'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_7'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_0'. (DDB-72)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:10   78890.0      0.85      17.1       0.0                          
+    0:00:10   78890.0      0.85      17.1       0.0                          
+    0:00:12   82321.0      0.00       0.0       0.0                          
+    0:00:12   82321.0      0.00       0.0       0.0                          
+    0:00:12   82321.0      0.00       0.0       0.0                          
+    0:00:12   82321.0      0.00       0.0       0.0                          
+    0:00:12   82321.0      0.00       0.0       0.0                          
+    0:00:14   66092.0      0.00       0.0       0.0                          
+    0:00:14   66092.0      0.00       0.0       0.0                          
+    0:00:14   66092.0      0.00       0.0       0.0                          
+    0:00:15   66092.0      0.00       0.0       0.0                          
+    0:00:15   66092.0      0.00       0.0       0.0                          
+    0:00:15   66092.0      0.00       0.0       0.0                          
+    0:00:15   66092.0      0.00       0.0       0.0                          
+    0:00:15   66092.0      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:15   66092.0      0.00       0.0       0.0                          
+    0:00:15   66092.0      0.00       0.0       0.0                          
+    0:00:15   66044.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 25000)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:15   66044.0      0.00       0.0       0.0                          
+    0:00:15   66044.0      0.00       0.0       0.0                          
+    0:00:16   65844.0      0.00       0.0       0.0                          
+    0:00:16   65655.0      0.00       0.0       0.0                          
+    0:00:16   65461.0      0.00       0.0       0.0                          
+    0:00:16   65327.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:17   65084.0      0.00       0.0       0.0                          
+    0:00:17   64904.0      0.00       0.0       0.0                          
+    0:00:17   64726.0      0.00       0.0       0.0                          
+    0:00:17   64506.0      0.00       0.0       0.0                          
+    0:00:17   64308.0      0.00       0.0       0.0                          
+    0:00:17   64106.0      0.00       0.0       0.0                          
+    0:00:17   63913.0      0.00       0.0       0.0                          
+    0:00:17   63729.0      0.00       0.0       0.0                          
+    0:00:17   63650.0      0.00       0.0       0.0                          
+    0:00:17   63624.0      0.00       0.0       0.0                          
+    0:00:18   63610.0      0.00       0.0       0.0                          
+    0:00:18   63610.0      0.00       0.0       0.0                          
+    0:00:18   63610.0      0.00       0.0       0.0                          
+    0:00:18   63610.0      0.00       0.0       0.0                          
+    0:00:18   63610.0      0.00       0.0       0.0                          
+    0:00:18   63610.0      0.00       0.0       0.0                          
+    0:00:18   63610.0      0.00       0.0       0.0                          
+Loading db file '/opt/synopsys-2019/app/syn/Q-2019.12-SP1/libraries/syn/lsi_10k.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'router' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'inst[1].portout_module/clock': 4216 load(s), 1 driver(s)
+     Net 'inst[1].portout_module/reset_n': 4216 load(s), 1 driver(s)
+1
+dc_shell> report_area
+ 
+****************************************
+Report : area
+Design : router
+Version: Q-2019.12-SP1
+Date   : Mon Dec  4 16:12:33 2023
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'router' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    lsi_10k (File: /opt/synopsys-2019/app/syn/Q-2019.12-SP1/libraries/syn/lsi_10k.db)
+
+Number of ports:                         1820
+Number of nets:                         21181
+Number of cells:                        16251
+Number of combinational cells:          11994
+Number of sequential cells:              4216
+Number of macros/black boxes:               0
+Number of buf/inv:                       1057
+Number of references:                      25
+
+Combinational area:              25706.000000
+Buf/Inv area:                     1057.000000
+Noncombinational area:           37904.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 63610.000000
+Total area:                 undefined
+1
+dc_shell> report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : router
+Version: Q-2019.12-SP1
+Date   : Mon Dec  4 16:14:19 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: inst[0].fifo_inst/read_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: inst[0].fifo_inst/count_reg[0]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  inst[0].fifo_inst/read_ptr_reg[0]/CP (FD2)              0.00 #     0.00 r
+  inst[0].fifo_inst/read_ptr_reg[0]/QN (FD2)              2.99       2.99 r
+  inst[0].fifo_inst/U107/Z (ND2)                          0.47       3.46 f
+  inst[0].fifo_inst/U3/Z (NR2P)                           4.66       8.13 r
+  inst[0].fifo_inst/U242/Z (AO2)                          0.55       8.68 f
+  inst[0].fifo_inst/U245/Z (ND4)                          0.79       9.47 r
+  inst[0].fifo_inst/U246/Z (ND2)                          0.22       9.69 f
+  inst[0].fifo_inst/U54/Z (AN2P)                          0.94      10.63 f
+1
+dc_shell> report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : router
+Version: Q-2019.12-SP1
+Date   : Mon Dec  4 16:15:23 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: inst[0].fifo_inst/read_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: inst[0].fifo_inst/count_reg[0]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  inst[0].fifo_inst/read_ptr_reg[0]/CP (FD2)              0.00 #     0.00 r
+  inst[0].fifo_inst/read_ptr_reg[0]/QN (FD2)              2.99       2.99 r
+  inst[0].fifo_inst/U107/Z (ND2)                          0.47       3.46 f
+  inst[0].fifo_inst/U3/Z (NR2P)                           4.66       8.13 r
+  inst[0].fifo_inst/U242/Z (AO2)                          0.55       8.68 f
+  inst[0].fifo_inst/U245/Z (ND4)                          0.79       9.47 r
+  inst[0].fifo_inst/U246/Z (ND2)                          0.22       9.69 f
+  inst[0].fifo_inst/U54/Z (AN2P)                          0.94      10.63 f
+1
+dc_shell> write -f verilog -hier -out gate.v
+Writing verilog file '/DCNFS/users/student/cberry/ELEN603/final_project/gate.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Verilog writer has added 8 nets to module router using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+dc_shell> report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : router
+Version: Q-2019.12-SP1
+Date   : Mon Dec  4 16:15:56 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: inst[0].fifo_inst/read_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: inst[0].fifo_inst/count_reg[0]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  inst[0].fifo_inst/read_ptr_reg[0]/CP (FD2)              0.00 #     0.00 r
+  inst[0].fifo_inst/read_ptr_reg[0]/QN (FD2)              2.99       2.99 r
+  inst[0].fifo_inst/U107/Z (ND2)                          0.47       3.46 f
+  inst[0].fifo_inst/U3/Z (NR2P)                           4.66       8.13 r
+  inst[0].fifo_inst/U242/Z (AO2)                          0.55       8.68 f
+  inst[0].fifo_inst/U245/Z (ND4)                          0.79       9.47 r
+  inst[0].fifo_inst/U246/Z (ND2)                          0.22       9.69 f
+  inst[0].fifo_inst/U54/Z (AN2P)                          0.94      10.63 f
+1
+dc_shell> 
+[3]+  Stopped                 dc_shell-t
+[cberry@linux21509 final_project]$ dc_shell-t
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version Q-2019.12-SP1 for linux64 - Jan 15, 2020 
+
+                    Copyright (c) 1988 - 2020 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+dc_shell> set link_library {* lsi_10k.db dw_foundation.sldb}
+* lsi_10k.db dw_foundation.sldb
+dc_shell> set target_library {lsi_10k.db}
+lsi_10k.db
+dc_shell> analyze -format sverilog { router.v portin.v fifo.v switch_fabric.v portout.v }
+Running PRESTO HDLC
+Compiling source file ./router.v
+Compiling source file ./portin.v
+Warning:  ./portin.v:18: The construct 'declaration initial assignment' is not supported in synthesis; it is ignored. (VER-708)
+Compiling source file ./fifo.v
+Warning:  Little argument or return value checking implemented for system task or function '$time'. (VER-209)
+Warning:  ./portin.v:73: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Compiling source file ./switch_fabric.v
+Warning:  ./fifo.v:39: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  ./fifo.v:48: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Compiling source file ./portout.v
+Warning:  ./switch_fabric.v:44: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  ./portout.v:32: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  ./portout.v:48: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Presto compilation completed successfully.
+Loading db file '/opt/synopsys-2019/app/syn/Q-2019.12-SP1/libraries/syn/lsi_10k.db'
+Loading db file '/opt/synopsys-2019/app/syn/Q-2019.12-SP1/libraries/syn/dw_foundation.sldb'
+1
+dc_shell> elaborate router
+Loading db file '/opt/synopsys-2019/app/syn/Q-2019.12-SP1/libraries/syn/gtech.db'
+Loading db file '/opt/synopsys-2019/app/syn/Q-2019.12-SP1/libraries/syn/standard.sldb'
+  Loading link library 'lsi_10k'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully. (router)
+Elaborated 1 design.
+Current design is now 'router'.
+Information: Building the design 'portin'. (HDL-193)
+Warning:  Little argument or return value checking implemented for system task or function '$time'. (VER-209)
+Warning:  ./portin.v:73: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+$display output: : -- PORTIN COMPLETE -- Portin: Address = 0000000000000000, Payload = ?, Valid = ??
+
+Statistics for case statements in always block at line 31 in file
+	'./portin.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            41            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine portin line 23 in file
+		'./portin.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   di_latched_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine portin line 31 in file
+		'./portin.v'.
+==================================================================================
+|     Register Name      |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==================================================================================
+|       state_reg        | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  addr_from_input_reg   | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+| payload_from_input_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   vld_from_input_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     addr_count_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   payload_count_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+==================================================================================
+Presto compilation completed successfully. (portin)
+Information: Building the design 'fifo'. (HDL-193)
+Warning:  Little argument or return value checking implemented for system task or function '$time'. (VER-209)
+Warning:  ./fifo.v:39: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  ./fifo.v:48: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  ./fifo.v:38: signed to unsigned conversion occurs. (VER-318)
+Warning:  ./fifo.v:47: signed to unsigned conversion occurs. (VER-318)
+$display output: : FIFO Write: Data = 0000000000000000, Write Ptr = ?, Count = ??
+$display output: : FIFO Read: Data = 0000000000000000, Read Ptr = ?, Count = ??
+
+Inferred memory devices in process
+	in routine fifo line 20 in file
+		'./fifo.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     buffer_reg      | Flip-flop |  320  |  Y  | N  | Y  | N  | N  | N  | N  |
+|    write_ptr_reg    | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    read_ptr_reg     | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      count_reg      | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      empty_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|      full_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    data_out_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  delay_counter_reg  | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|  delay_counter_reg  | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fifo)
+Information: Building the design 'portout'. (HDL-193)
+Warning:  Little argument or return value checking implemented for system task or function '$time'. (VER-209)
+Warning:  ./portout.v:32: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+Warning:  ./portout.v:48: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+$display output: : Portout: Din = 0000000000000000?
+$display output: : Portout: Serialization of 0000000000000000 completed.?
+
+Inferred memory devices in process
+	in routine portout line 18 in file
+		'./portout.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      dout_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   vld_latched_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      temp_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      count_reg      | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       pop_reg       | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|     frame_n_reg     | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|     valid_n_reg     | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|      state_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|    portout/41    |   32   |    1    |      5       |
+======================================================
+Presto compilation completed successfully. (portout)
+Information: Building the design 'switch_fabric'. (HDL-193)
+Warning:  Little argument or return value checking implemented for system task or function '$time'. (VER-209)
+Warning:  ./switch_fabric.v:44: In the call to '$display', the '%t' format specifier is not supported. (ELAB-902)
+$display output: : Switch Routing: From Input 00 to Address 00000000, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000001, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000002, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000003, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000004, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000005, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000006, Data = ?, Latched Data = ????????, Valido_n = 1?
+$display output: : Switch Routing: From Input 00 to Address 00000007, Data = ?, Latched Data = ????????, Valido_n = 1?
+
+Inferred memory devices in process
+	in routine switch_fabric line 15 in file
+		'./switch_fabric.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+| fifo_data_out_latched_reg | Flip-flop |  256  |  Y  | N  | Y  | N  | N  | N  | N  |
+|       valido_n_reg        | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|         dout_reg          | Flip-flop |  256  |  Y  | N  | Y  | N  | N  | N  | N  |
+=====================================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+| switch_fabric/37 |   8    |    1    |      3       |
+======================================================
+Presto compilation completed successfully. (switch_fabric)
+1
+dc_shell> create_clock clock -period 25
+1
+dc_shell> set_max_area 25000
+1
+dc_shell> set_input_delay -clock clock 0 [all_inputs]
+1
+dc_shell> set_output_delay -clock clock 0 [all_outputs]
+1
+dc_shell> compile
+Information: Checking out the license 'DesignWare'. (SEC-104)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | Q-2019.12-DWBB_201912.1 |     *     |
+| Licensed DW Building Blocks        | Q-2019.12-DWBB_201912.1 |     *     |
+============================================================================
+
+
+Information: There are 23 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'switch_fabric'
+Information: Added key list 'DesignWare' to design 'switch_fabric'. (DDB-72)
+  Processing 'portout_0'
+  Processing 'fifo_0'
+  Processing 'portin_0'
+Information: Added key list 'DesignWare' to design 'portin_0'. (DDB-72)
+Information: The register 'addr_from_input_reg[3]' is a constant and will be removed. (OPT-1206)
+Information: The register 'addr_count_reg[2]' is a constant and will be removed. (OPT-1206)
+  Processing 'router'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'portout_1_DW01_inc_0_DW01_inc_1'
+  Processing 'fifo_1_DW01_sub_0'
+  Mapping 'fifo_1_DW_cmp_0'
+  Processing 'fifo_1_DW_div_uns_0'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_1_DW01_inc_0_DW01_inc_2'
+  Processing 'fifo_1_DW01_add_0'
+  Mapping 'fifo_1_DW_cmp_1'
+  Processing 'fifo_1_DW_div_uns_1'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_1_DW01_inc_1_DW01_inc_3'
+  Processing 'fifo_1_DW01_dec_0'
+  Processing 'portin_1_DW01_inc_0_DW01_inc_4'
+  Processing 'portout_2_DW01_inc_0_DW01_inc_5'
+  Processing 'fifo_2_DW01_sub_0_DW01_sub_1'
+  Mapping 'fifo_2_DW_cmp_0'
+  Processing 'fifo_2_DW_div_uns_0_DW_div_uns_2'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_2_DW01_inc_0_DW01_inc_6'
+  Processing 'fifo_2_DW01_add_0_DW01_add_1'
+  Mapping 'fifo_2_DW_cmp_1'
+  Processing 'fifo_2_DW_div_uns_1_DW_div_uns_3'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_2_DW01_inc_1_DW01_inc_7'
+  Processing 'fifo_2_DW01_dec_0_DW01_dec_1'
+  Processing 'portin_2_DW01_inc_0_DW01_inc_8'
+  Processing 'portout_3_DW01_inc_0_DW01_inc_9'
+  Processing 'fifo_3_DW01_sub_0_DW01_sub_2'
+  Mapping 'fifo_3_DW_cmp_0'
+  Processing 'fifo_3_DW_div_uns_0_DW_div_uns_4'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_3_DW01_inc_0_DW01_inc_10'
+  Processing 'fifo_3_DW01_add_0_DW01_add_2'
+  Mapping 'fifo_3_DW_cmp_1'
+  Processing 'fifo_3_DW_div_uns_1_DW_div_uns_5'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_3_DW01_inc_1_DW01_inc_11'
+  Processing 'fifo_3_DW01_dec_0_DW01_dec_2'
+  Processing 'portin_3_DW01_inc_0_DW01_inc_12'
+  Processing 'portout_4_DW01_inc_0_DW01_inc_13'
+  Processing 'fifo_4_DW01_sub_0_DW01_sub_3'
+  Mapping 'fifo_4_DW_cmp_0'
+  Processing 'fifo_4_DW_div_uns_0_DW_div_uns_6'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_4_DW01_inc_0_DW01_inc_14'
+  Processing 'fifo_4_DW01_add_0_DW01_add_3'
+  Mapping 'fifo_4_DW_cmp_1'
+  Processing 'fifo_4_DW_div_uns_1_DW_div_uns_7'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_4_DW01_inc_1_DW01_inc_15'
+  Processing 'fifo_4_DW01_dec_0_DW01_dec_3'
+  Processing 'portin_4_DW01_inc_0_DW01_inc_16'
+  Processing 'portout_5_DW01_inc_0_DW01_inc_17'
+  Processing 'fifo_5_DW01_sub_0_DW01_sub_4'
+  Mapping 'fifo_5_DW_cmp_0'
+  Processing 'fifo_5_DW_div_uns_0_DW_div_uns_8'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_5_DW01_inc_0_DW01_inc_18'
+  Processing 'fifo_5_DW01_add_0_DW01_add_4'
+  Mapping 'fifo_5_DW_cmp_1'
+  Processing 'fifo_5_DW_div_uns_1_DW_div_uns_9'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_5_DW01_inc_1_DW01_inc_19'
+  Processing 'fifo_5_DW01_dec_0_DW01_dec_4'
+  Processing 'portin_5_DW01_inc_0_DW01_inc_20'
+  Processing 'portout_6_DW01_inc_0_DW01_inc_21'
+  Processing 'fifo_6_DW01_sub_0_DW01_sub_5'
+  Mapping 'fifo_6_DW_cmp_0'
+  Processing 'fifo_6_DW_div_uns_0_DW_div_uns_10'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_6_DW01_inc_0_DW01_inc_22'
+  Processing 'fifo_6_DW01_add_0_DW01_add_5'
+  Mapping 'fifo_6_DW_cmp_1'
+  Processing 'fifo_6_DW_div_uns_1_DW_div_uns_11'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_6_DW01_inc_1_DW01_inc_23'
+  Processing 'fifo_6_DW01_dec_0_DW01_dec_5'
+  Processing 'portin_6_DW01_inc_0_DW01_inc_24'
+  Processing 'portout_7_DW01_inc_0_DW01_inc_25'
+  Processing 'fifo_7_DW01_sub_0_DW01_sub_6'
+  Mapping 'fifo_7_DW_cmp_0'
+  Processing 'fifo_7_DW_div_uns_0_DW_div_uns_12'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_7_DW01_inc_0_DW01_inc_26'
+  Processing 'fifo_7_DW01_add_0_DW01_add_6'
+  Mapping 'fifo_7_DW_cmp_1'
+  Processing 'fifo_7_DW_div_uns_1_DW_div_uns_13'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_7_DW01_inc_1_DW01_inc_27'
+  Processing 'fifo_7_DW01_dec_0_DW01_dec_6'
+  Processing 'portin_7_DW01_inc_0_DW01_inc_28'
+  Processing 'portout_0_DW01_inc_0_DW01_inc_29'
+  Processing 'fifo_0_DW01_sub_0_DW01_sub_7'
+  Mapping 'fifo_0_DW_cmp_0'
+  Processing 'fifo_0_DW_div_uns_0_DW_div_uns_14'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_0_DW01_inc_0_DW01_inc_30'
+  Processing 'fifo_0_DW01_add_0_DW01_add_7'
+  Mapping 'fifo_0_DW_cmp_1'
+  Processing 'fifo_0_DW_div_uns_1_DW_div_uns_15'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Processing 'fifo_0_DW01_inc_1_DW01_inc_31'
+  Processing 'fifo_0_DW01_dec_0_DW01_dec_7'
+  Processing 'portin_0_DW01_inc_0_DW01_inc_32'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'fifo_1'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_2'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_3'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_4'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_5'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_6'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_7'. (DDB-72)
+Information: Added key list 'DesignWare' to design 'fifo_0'. (DDB-72)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:09   78890.0      0.85      17.1       0.0                          
+    0:00:09   78890.0      0.85      17.1       0.0                          
+    0:00:11   82321.0      0.00       0.0       0.0                          
+    0:00:11   82321.0      0.00       0.0       0.0                          
+    0:00:11   82321.0      0.00       0.0       0.0                          
+    0:00:11   82321.0      0.00       0.0       0.0                          
+    0:00:11   82321.0      0.00       0.0       0.0                          
+    0:00:14   66092.0      0.00       0.0       0.0                          
+    0:00:14   66092.0      0.00       0.0       0.0                          
+    0:00:14   66092.0      0.00       0.0       0.0                          
+    0:00:14   66092.0      0.00       0.0       0.0                          
+    0:00:14   66092.0      0.00       0.0       0.0                          
+    0:00:14   66092.0      0.00       0.0       0.0                          
+    0:00:14   66092.0      0.00       0.0       0.0                          
+    0:00:14   66092.0      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:14   66092.0      0.00       0.0       0.0                          
+    0:00:14   66092.0      0.00       0.0       0.0                          
+    0:00:14   66044.0      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 25000)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:14   66044.0      0.00       0.0       0.0                          
+    0:00:14   66044.0      0.00       0.0       0.0                          
+    0:00:15   65844.0      0.00       0.0       0.0                          
+    0:00:15   65655.0      0.00       0.0       0.0                          
+    0:00:15   65461.0      0.00       0.0       0.0                          
+    0:00:15   65327.0      0.00       0.0       0.0                          
+    0:00:15   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65263.0      0.00       0.0       0.0                          
+    0:00:16   65084.0      0.00       0.0       0.0                          
+    0:00:16   64904.0      0.00       0.0       0.0                          
+    0:00:16   64726.0      0.00       0.0       0.0                          
+    0:00:16   64506.0      0.00       0.0       0.0                          
+    0:00:16   64308.0      0.00       0.0       0.0                          
+    0:00:16   64106.0      0.00       0.0       0.0                          
+    0:00:16   63913.0      0.00       0.0       0.0                          
+    0:00:17   63729.0      0.00       0.0       0.0                          
+    0:00:17   63650.0      0.00       0.0       0.0                          
+    0:00:17   63624.0      0.00       0.0       0.0                          
+    0:00:17   63610.0      0.00       0.0       0.0                          
+    0:00:17   63610.0      0.00       0.0       0.0                          
+    0:00:17   63610.0      0.00       0.0       0.0                          
+    0:00:17   63610.0      0.00       0.0       0.0                          
+    0:00:17   63610.0      0.00       0.0       0.0                          
+    0:00:17   63610.0      0.00       0.0       0.0                          
+    0:00:17   63610.0      0.00       0.0       0.0                          
+Loading db file '/opt/synopsys-2019/app/syn/Q-2019.12-SP1/libraries/syn/lsi_10k.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'router' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'inst[1].portout_module/clock': 4216 load(s), 1 driver(s)
+     Net 'inst[1].portout_module/reset_n': 4216 load(s), 1 driver(s)
+1
+dc_shell> report_area
+ 
+****************************************
+Report : area
+Design : router
+Version: Q-2019.12-SP1
+Date   : Mon Dec  4 16:18:58 2023
+****************************************
+
+Information: Updating design information... (UID-85)
+Warning: Design 'router' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Library(s) Used:
+
+    lsi_10k (File: /opt/synopsys-2019/app/syn/Q-2019.12-SP1/libraries/syn/lsi_10k.db)
+
+Number of ports:                         1820
+Number of nets:                         21181
+Number of cells:                        16251
+Number of combinational cells:          11994
+Number of sequential cells:              4216
+Number of macros/black boxes:               0
+Number of buf/inv:                       1057
+Number of references:                      25
+
+Combinational area:              25706.000000
+Buf/Inv area:                     1057.000000
+Noncombinational area:           37904.000000
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 63610.000000
+Total area:                 undefined
+1
+dc_shell> report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : router
+Version: Q-2019.12-SP1
+Date   : Mon Dec  4 16:19:02 2023
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: nom_pvt   Library: lsi_10k
+Wire Load Model Mode: top
+
+  Startpoint: inst[0].fifo_inst/read_ptr_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: inst[0].fifo_inst/count_reg[0]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clock (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  inst[0].fifo_inst/read_ptr_reg[0]/CP (FD2)              0.00 #     0.00 r
+  inst[0].fifo_inst/read_ptr_reg[0]/QN (FD2)              2.99       2.99 r
+  inst[0].fifo_inst/U107/Z (ND2)                          0.47       3.46 f
+  inst[0].fifo_inst/U3/Z (NR2P)                           4.66       8.13 r
+  inst[0].fifo_inst/U242/Z (AO2)                          0.55       8.68 f
+  inst[0].fifo_inst/U245/Z (ND4)                          0.79       9.47 r
+  inst[0].fifo_inst/U246/Z (ND2)                          0.22       9.69 f
+  inst[0].fifo_inst/U54/Z (AN2P)                          0.94      10.63 f
+  inst[0].fifo_inst/U776/Z (ND4)                          0.79      11.42 r
+  inst[0].fifo_inst/U772/Z (NR4)                          0.31      11.73 f
+  inst[0].fifo_inst/U766/Z (ND2)                          0.78      12.51 r
+  inst[0].fifo_inst/U765/Z (AN3)                          0.84      13.34 r
+  inst[0].fifo_inst/U763/Z (ND4)                          1.86      15.20 f
+  inst[0].fifo_inst/U55/Z (IVP)                           5.00      20.20 r
+  inst[0].fifo_inst/U716/Z (NR2)                          0.60      20.80 f
+  inst[0].fifo_inst/U715/Z (NR2)                          1.84      22.65 r
+  inst[0].fifo_inst/U705/Z (AO2)                          0.55      23.20 f
+  inst[0].fifo_inst/U703/Z (ND2)                          0.64      23.84 r
+  inst[0].fifo_inst/count_reg[0]/D (FD2)                  0.00      23.84 r
+  data arrival time                                                 23.84
+
+  clock clock (rise edge)                                25.00      25.00
+  clock network delay (ideal)                             0.00      25.00
+  inst[0].fifo_inst/count_reg[0]/CP (FD2)                 0.00      25.00 r
+  library setup time                                     -0.85      24.15
+  data required time                                                24.15
+  --------------------------------------------------------------------------
+  data required time                                                24.15
+  data arrival time                                                -23.84
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.31
+
+
+1
+dc_shell> write -f verilog -hier -out gate.v
+Writing verilog file '/DCNFS/users/student/cberry/ELEN603/final_project/gate.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Verilog writer has added 8 nets to module router using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+1
+

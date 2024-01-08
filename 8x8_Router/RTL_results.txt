@@ -1,0 +1,1236 @@
+/*--- RTL RESULTS ---*/
+
+STARTING SMOKE TEST!!!!
+                 155: Testbench: Sending packet from 0 to 7, Data = deadbeef
+Sending packet @  235 [sa=0] [da=7] data=deadbeef
+                 615: -- PORTIN COMPLETE -- Portin: Address = 7, Payload = deadbeef, Valid = 0
+                 625: FIFO Write: Data = deadbeef, Write Ptr =  0, Count =  0
+                 965: FIFO Read: Data = 00000000, Read Ptr =  0, Count =  1
+                 975: Switch Routing: From Input           0 to Address 7, Data = deadbeef, Latched Data = 00000000, Valido_n = 1
+                 995: Portout: Din = deadbeef
+                1315: Portout: Serialization of deadbeef completed.
+Received deadbeef @ 1335 and match found  
+$finish called from file "testbench.sv", line 123.
+
+*******************End of Simulation Report*******************
+
+Number of Errors =           0
+Number of unmatched packets =           0
+Port  0 [transmitted=  1] [received=  0] [expected=  0]
+Port  1 [transmitted=  0] [received=  0] [expected=  0]
+Port  2 [transmitted=  0] [received=  0] [expected=  0]
+Port  3 [transmitted=  0] [received=  0] [expected=  0]
+Port  4 [transmitted=  0] [received=  0] [expected=  0]
+Port  5 [transmitted=  0] [received=  0] [expected=  0]
+Port  6 [transmitted=  0] [received=  0] [expected=  0]
+Port  7 [transmitted=  0] [received=  1] [expected=  1]
+$finish at simulation time                10705
+
+----
+
+STARTING 1-PORT TEST!!!!
+                 155: Testbench: Sending packet from 0 to 0, Data = 12341234
+Sending packet @  235 [sa=0] [da=0] data=12341234
+                 615: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = 12341234, Valid = 0
+                 625: FIFO Write: Data = 12341234, Write Ptr =  0, Count =  0
+                 705: Testbench: Sending packet from 0 to 1, Data = deadbeef
+Sending packet @  705 [sa=0] [da=1] data=deadbeef
+                 965: FIFO Read: Data = 00000000, Read Ptr =  0, Count =  1
+                 975: Switch Routing: From Input           0 to Address 1, Data = 12341234, Latched Data = 00000000, Valido_n = 1
+                 995: Portout: Din = 12341234
+                1085: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = deadbeef, Valid = 0
+                1095: FIFO Write: Data = deadbeef, Write Ptr =  1, Count =  0
+                1175: Testbench: Sending packet from 0 to 2, Data = 9876abcd
+Sending packet @ 1175 [sa=0] [da=2] data=9876abcd
+                1315: Portout: Serialization of 12341234 completed.
+Received 12341234 @ 1335 and match found  
+                1435: FIFO Read: Data = 12341234, Read Ptr =  1, Count =  1
+                1445: Switch Routing: From Input           0 to Address 2, Data = deadbeef, Latched Data = 12341234, Valido_n = 1
+                1465: Portout: Din = deadbeef
+                1555: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 9876abcd, Valid = 0
+                1565: FIFO Write: Data = 9876abcd, Write Ptr =  2, Count =  0
+                1645: Testbench: Sending packet from 0 to 3, Data = 55555555
+Sending packet @ 1645 [sa=0] [da=3] data=55555555
+                1785: Portout: Serialization of deadbeef completed.
+Received deadbeef @ 1805 and match found  
+                1905: FIFO Read: Data = deadbeef, Read Ptr =  2, Count =  1
+                1915: Switch Routing: From Input           0 to Address 3, Data = 9876abcd, Latched Data = deadbeef, Valido_n = 1
+                1935: Portout: Din = 9876abcd
+                2025: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 55555555, Valid = 0
+                2035: FIFO Write: Data = 55555555, Write Ptr =  3, Count =  0
+                2115: Testbench: Sending packet from 0 to 4, Data = cafecafe
+                2255: Portout: Serialization of 9876abcd completed.
+Received 9876abcd @ 2275 and match found  
+Sending packet @ 2285 [sa=0] [da=4] data=cafecafe
+                2375: FIFO Read: Data = 9876abcd, Read Ptr =  3, Count =  1
+                2385: Switch Routing: From Input           0 to Address 4, Data = 55555555, Latched Data = 9876abcd, Valido_n = 1
+                2405: Portout: Din = 55555555
+                2665: -- PORTIN COMPLETE -- Portin: Address = 4, Payload = cafecafe, Valid = 0
+                2675: FIFO Write: Data = cafecafe, Write Ptr =  4, Count =  0
+                2725: Portout: Serialization of 55555555 completed.
+Received 55555555 @ 2745 and match found  
+                2755: Testbench: Sending packet from 0 to 5, Data = abcddcba
+Sending packet @ 2925 [sa=0] [da=5] data=abcddcba
+                3015: FIFO Read: Data = 55555555, Read Ptr =  4, Count =  1
+                3025: Switch Routing: From Input           0 to Address 5, Data = cafecafe, Latched Data = 55555555, Valido_n = 1
+                3045: Portout: Din = cafecafe
+                3305: -- PORTIN COMPLETE -- Portin: Address = 5, Payload = abcddcba, Valid = 0
+                3315: FIFO Write: Data = abcddcba, Write Ptr =  5, Count =  0
+                3365: Portout: Serialization of cafecafe completed.
+Received cafecafe @ 3385 and match found  
+                3395: Testbench: Sending packet from 0 to 6, Data = 54555050
+Sending packet @ 3395 [sa=0] [da=6] data=54555050
+                3655: FIFO Read: Data = cafecafe, Read Ptr =  5, Count =  1
+                3665: Switch Routing: From Input           0 to Address 6, Data = abcddcba, Latched Data = cafecafe, Valido_n = 1
+                3685: Portout: Din = abcddcba
+                3775: -- PORTIN COMPLETE -- Portin: Address = 6, Payload = 54555050, Valid = 0
+                3785: FIFO Write: Data = 54555050, Write Ptr =  6, Count =  0
+                3865: Testbench: Sending packet from 0 to 7, Data = 00001111
+Sending packet @ 3865 [sa=0] [da=7] data=00001111
+                4005: Portout: Serialization of abcddcba completed.
+Received abcddcba @ 4025 and match found  
+                4125: FIFO Read: Data = abcddcba, Read Ptr =  6, Count =  1
+                4135: Switch Routing: From Input           0 to Address 7, Data = 54555050, Latched Data = abcddcba, Valido_n = 1
+                4155: Portout: Din = 54555050
+                4245: -- PORTIN COMPLETE -- Portin: Address = 7, Payload = 00001111, Valid = 0
+                4255: FIFO Write: Data = 00001111, Write Ptr =  7, Count =  0
+                4475: Portout: Serialization of 54555050 completed.
+Received 54555050 @ 4495 and match found  
+                4595: FIFO Read: Data = 54555050, Read Ptr =  7, Count =  1
+                4605: Switch Routing: From Input           0 to Address 7, Data = 00001111, Latched Data = 54555050, Valido_n = 1
+                4625: Portout: Din = 00001111
+                4945: Portout: Serialization of 00001111 completed.
+Received 00001111 @ 4965 and match found  
+$finish called from file "testbench.sv", line 123.
+
+*******************End of Simulation Report*******************
+
+Number of Errors =           0
+Number of unmatched packets =           0
+Port  0 [transmitted=  8] [received=  0] [expected=  1]
+Port  1 [transmitted=  0] [received=  1] [expected=  1]
+Port  2 [transmitted=  0] [received=  1] [expected=  1]
+Port  3 [transmitted=  0] [received=  1] [expected=  1]
+Port  4 [transmitted=  0] [received=  1] [expected=  1]
+Port  5 [transmitted=  0] [received=  1] [expected=  1]
+Port  6 [transmitted=  0] [received=  1] [expected=  1]
+Port  7 [transmitted=  0] [received=  2] [expected=  1]
+
+----
+
+STARTING 4-PORT TEST!!!!
+                 155: Testbench: Sending packet from 0 to 3, Data = 12153524
+Sending packet @  155 [sa=0] [da=3] data=12153524
+                 155: Testbench: Sending packet from 1 to 2, Data = 8484d609
+Sending packet @  155 [sa=1] [da=2] data=8484d609
+                 155: Testbench: Sending packet from 2 to 1, Data = 06b97b0d
+                 155: Testbench: Sending packet from 3 to 0, Data = b2c28465
+Sending packet @  155 [sa=3] [da=0] data=b2c28465
+Sending packet @  325 [sa=2] [da=1] data=06b97b0d
+                 535: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 12153524, Valid = 0
+                 535: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 8484d609, Valid = 0
+                 535: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = b2c28465, Valid = 0
+                 545: FIFO Write: Data = 12153524, Write Ptr =  0, Count =  0
+                 545: FIFO Write: Data = 8484d609, Write Ptr =  0, Count =  0
+                 545: FIFO Write: Data = b2c28465, Write Ptr =  0, Count =  0
+                 625: Testbench: Sending packet from 3 to 0, Data = 00f3e301
+                 625: Testbench: Sending packet from 1 to 2, Data = 3b23f176
+                 625: Testbench: Sending packet from 0 to 3, Data = 76d457ed
+                 705: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = 06b97b0d, Valid = 0
+Sending packet @  715 [sa=3] [da=0] data=00f3e301
+                 715: FIFO Write: Data = 06b97b0d, Write Ptr =  0, Count =  0
+Sending packet @  745 [sa=0] [da=3] data=76d457ed
+Sending packet @  795 [sa=1] [da=2] data=3b23f176
+                 795: Testbench: Sending packet from 2 to 1, Data = 7cfde9f9
+Sending packet @  795 [sa=2] [da=1] data=7cfde9f9
+                 885: FIFO Read: Data = 00000000, Read Ptr =  0, Count =  1
+                 885: FIFO Read: Data = 00000000, Read Ptr =  0, Count =  1
+                 885: FIFO Read: Data = 00000000, Read Ptr =  0, Count =  1
+                 895: Switch Routing: From Input           0 to Address 3, Data = 12153524, Latched Data = 00000000, Valido_n = 1
+                 895: Switch Routing: From Input           1 to Address 2, Data = 8484d609, Latched Data = 00000000, Valido_n = 1
+                 895: Switch Routing: From Input           3 to Address 0, Data = b2c28465, Latched Data = 00000000, Valido_n = 1
+                 915: Portout: Din = b2c28465
+                 915: Portout: Din = 8484d609
+                 915: Portout: Din = 12153524
+                1095: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = 00f3e301, Valid = 0
+                1105: FIFO Write: Data = 00f3e301, Write Ptr =  1, Count =  0
+                1125: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 76d457ed, Valid = 0
+                1135: FIFO Write: Data = 76d457ed, Write Ptr =  1, Count =  0
+                1175: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 3b23f176, Valid = 0
+                1175: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = 7cfde9f9, Valid = 0
+                1185: Testbench: Sending packet from 3 to 0, Data = e2f784c5
+Sending packet @ 1185 [sa=3] [da=0] data=e2f784c5
+                1185: FIFO Write: Data = 3b23f176, Write Ptr =  1, Count =  0
+                1185: FIFO Write: Data = 7cfde9f9, Write Ptr =  1, Count =  1
+                1215: Testbench: Sending packet from 0 to 3, Data = 72aff7e5
+Sending packet @ 1215 [sa=0] [da=3] data=72aff7e5
+                1235: Portout: Serialization of b2c28465 completed.
+                1235: Portout: Serialization of 8484d609 completed.
+                1235: Portout: Serialization of 12153524 completed.
+Received b2c28465 @ 1255 and match found  
+Received 8484d609 @ 1255 and match found  
+Received 12153524 @ 1255 and match found  
+                1265: Testbench: Sending packet from 2 to 1, Data = 8932d612
+                1265: Testbench: Sending packet from 1 to 2, Data = 793069f2
+Sending packet @ 1265 [sa=1] [da=2] data=793069f2
+                1445: FIFO Read: Data = b2c28465, Read Ptr =  1, Count =  1
+Sending packet @ 1455 [sa=2] [da=1] data=8932d612
+                1455: Switch Routing: From Input           3 to Address 0, Data = 00f3e301, Latched Data = b2c28465, Valido_n = 1
+                1475: FIFO Read: Data = 12153524, Read Ptr =  1, Count =  1
+                1475: Portout: Din = 00f3e301
+                1485: Switch Routing: From Input           0 to Address 3, Data = 76d457ed, Latched Data = 12153524, Valido_n = 1
+                1505: Portout: Din = 76d457ed
+                1525: FIFO Read: Data = 8484d609, Read Ptr =  1, Count =  1
+                1535: Switch Routing: From Input           1 to Address 2, Data = 3b23f176, Latched Data = 8484d609, Valido_n = 1
+                1555: Portout: Din = 3b23f176
+                1565: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = e2f784c5, Valid = 0
+                1575: FIFO Write: Data = e2f784c5, Write Ptr =  2, Count =  0
+                1595: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 72aff7e5, Valid = 0
+                1605: FIFO Write: Data = 72aff7e5, Write Ptr =  2, Count =  0
+                1645: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 793069f2, Valid = 0
+                1655: Testbench: Sending packet from 3 to 0, Data = f4007ae8
+Sending packet @ 1655 [sa=3] [da=0] data=f4007ae8
+                1655: FIFO Write: Data = 793069f2, Write Ptr =  2, Count =  0
+                1685: Testbench: Sending packet from 0 to 3, Data = 2e58495c
+Sending packet @ 1685 [sa=0] [da=3] data=2e58495c
+                1735: Testbench: Sending packet from 1 to 2, Data = 96ab582d
+Sending packet @ 1735 [sa=1] [da=2] data=96ab582d
+                1795: Portout: Serialization of 00f3e301 completed.
+Received 00f3e301 @ 1815 and match found  
+                1825: Portout: Serialization of 76d457ed completed.
+                1835: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = 8932d612, Valid = 0
+Received 76d457ed @ 1845 and match found  
+                1845: FIFO Write: Data = 8932d612, Write Ptr =  2, Count =  2
+                1875: Portout: Serialization of 3b23f176 completed.
+Received 3b23f176 @ 1895 and match found  
+                1915: FIFO Read: Data = 00f3e301, Read Ptr =  2, Count =  1
+                1925: Testbench: Sending packet from 2 to 1, Data = b1ef6263
+                1925: Switch Routing: From Input           3 to Address 0, Data = e2f784c5, Latched Data = 00f3e301, Valido_n = 1
+                1945: FIFO Read: Data = 76d457ed, Read Ptr =  2, Count =  1
+                1945: Portout: Din = e2f784c5
+                1955: Switch Routing: From Input           0 to Address 3, Data = 72aff7e5, Latched Data = 76d457ed, Valido_n = 1
+                1975: Portout: Din = 72aff7e5
+                1995: FIFO Read: Data = 3b23f176, Read Ptr =  2, Count =  1
+                2005: Switch Routing: From Input           1 to Address 2, Data = 793069f2, Latched Data = 3b23f176, Valido_n = 1
+Sending packet @ 2025 [sa=2] [da=1] data=b1ef6263
+                2025: Portout: Din = 793069f2
+                2035: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = f4007ae8, Valid = 0
+                2045: FIFO Write: Data = f4007ae8, Write Ptr =  3, Count =  0
+                2065: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 2e58495c, Valid = 0
+                2075: FIFO Write: Data = 2e58495c, Write Ptr =  3, Count =  0
+                2115: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 96ab582d, Valid = 0
+                2125: Testbench: Sending packet from 3 to 0, Data = c03b2280
+                2125: FIFO Write: Data = 96ab582d, Write Ptr =  3, Count =  0
+                2155: Testbench: Sending packet from 0 to 3, Data = 557845aa
+Sending packet @ 2155 [sa=0] [da=3] data=557845aa
+                2205: Testbench: Sending packet from 1 to 2, Data = cb203e96
+Sending packet @ 2205 [sa=1] [da=2] data=cb203e96
+                2265: Portout: Serialization of e2f784c5 completed.
+Sending packet @ 2285 [sa=3] [da=0] data=c03b2280
+Received e2f784c5 @ 2285 and match found  
+                2295: Portout: Serialization of 72aff7e5 completed.
+Received 72aff7e5 @ 2315 and match found  
+                2345: Portout: Serialization of 793069f2 completed.
+Received 793069f2 @ 2365 and match found  
+                2385: FIFO Read: Data = e2f784c5, Read Ptr =  3, Count =  1
+                2395: Switch Routing: From Input           3 to Address 0, Data = f4007ae8, Latched Data = e2f784c5, Valido_n = 1
+                2405: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = b1ef6263, Valid = 0
+                2415: FIFO Read: Data = 72aff7e5, Read Ptr =  3, Count =  1
+                2415: Portout: Din = f4007ae8
+                2415: FIFO Write: Data = b1ef6263, Write Ptr =  3, Count =  3
+                2425: Switch Routing: From Input           0 to Address 3, Data = 2e58495c, Latched Data = 72aff7e5, Valido_n = 1
+                2445: Portout: Din = 2e58495c
+                2465: FIFO Read: Data = 793069f2, Read Ptr =  3, Count =  1
+                2475: Switch Routing: From Input           1 to Address 2, Data = 96ab582d, Latched Data = 793069f2, Valido_n = 1
+                2495: Testbench: Sending packet from 2 to 1, Data = 86bc380d
+Sending packet @ 2495 [sa=2] [da=1] data=86bc380d
+                2495: Portout: Din = 96ab582d
+                2535: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 557845aa, Valid = 0
+                2545: FIFO Write: Data = 557845aa, Write Ptr =  4, Count =  0
+                2585: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = cb203e96, Valid = 0
+                2595: FIFO Write: Data = cb203e96, Write Ptr =  4, Count =  0
+                2625: Testbench: Sending packet from 0 to 3, Data = 359fdd6b
+Sending packet @ 2625 [sa=0] [da=3] data=359fdd6b
+                2665: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = c03b2280, Valid = 0
+                2675: Testbench: Sending packet from 1 to 2, Data = 81174a02
+Sending packet @ 2675 [sa=1] [da=2] data=81174a02
+                2675: FIFO Write: Data = c03b2280, Write Ptr =  4, Count =  0
+                2735: Portout: Serialization of f4007ae8 completed.
+                2755: Testbench: Sending packet from 3 to 0, Data = 0effe91d
+Sending packet @ 2755 [sa=3] [da=0] data=0effe91d
+Received f4007ae8 @ 2755 and match found  
+                2765: Portout: Serialization of 2e58495c completed.
+Received 2e58495c @ 2785 and match found  
+                2815: Portout: Serialization of 96ab582d completed.
+Received 96ab582d @ 2835 and match found  
+                2875: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = 86bc380d, Valid = 0
+                2885: FIFO Read: Data = 2e58495c, Read Ptr =  4, Count =  1
+                2885: FIFO Write: Data = 86bc380d, Write Ptr =  4, Count =  4
+                2895: Switch Routing: From Input           0 to Address 3, Data = 557845aa, Latched Data = 2e58495c, Valido_n = 1
+                2915: Portout: Din = 557845aa
+                2935: FIFO Read: Data = 96ab582d, Read Ptr =  4, Count =  1
+                2945: Switch Routing: From Input           1 to Address 2, Data = cb203e96, Latched Data = 96ab582d, Valido_n = 1
+                2965: Testbench: Sending packet from 2 to 1, Data = 11844923
+                2965: Portout: Din = cb203e96
+                3005: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 359fdd6b, Valid = 0
+                3015: FIFO Write: Data = 359fdd6b, Write Ptr =  5, Count =  0
+                3055: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 81174a02, Valid = 0
+Sending packet @ 3065 [sa=2] [da=1] data=11844923
+                3065: FIFO Write: Data = 81174a02, Write Ptr =  5, Count =  0
+                3095: Testbench: Sending packet from 0 to 3, Data = e5730aca
+Sending packet @ 3095 [sa=0] [da=3] data=e5730aca
+                3135: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = 0effe91d, Valid = 0
+                3145: Testbench: Sending packet from 1 to 2, Data = 7968bdf2
+                3145: FIFO Write: Data = 0effe91d, Write Ptr =  5, Count =  1
+                3225: Testbench: Sending packet from 3 to 0, Data = 20c4b341
+Sending packet @ 3225 [sa=3] [da=0] data=20c4b341
+                3235: Portout: Serialization of 557845aa completed.
+Sending packet @ 3245 [sa=1] [da=2] data=7968bdf2
+Received 557845aa @ 3255 and match found  
+                3285: Portout: Serialization of cb203e96 completed.
+Received cb203e96 @ 3305 and match found  
+                3355: FIFO Read: Data = 557845aa, Read Ptr =  5, Count =  1
+                3365: Switch Routing: From Input           0 to Address 3, Data = 359fdd6b, Latched Data = 557845aa, Valido_n = 1
+                3385: Portout: Din = 359fdd6b
+                3405: FIFO Read: Data = cb203e96, Read Ptr =  5, Count =  1
+                3415: Switch Routing: From Input           1 to Address 2, Data = 81174a02, Latched Data = cb203e96, Valido_n = 1
+                3435: Portout: Din = 81174a02
+                3445: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = 11844923, Valid = 0
+                3455: FIFO Write: Data = 11844923, Write Ptr =  5, Count =  5
+                3475: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = e5730aca, Valid = 0
+                3485: FIFO Write: Data = e5730aca, Write Ptr =  6, Count =  0
+                3535: Testbench: Sending packet from 2 to 1, Data = 3c20f378
+Sending packet @ 3535 [sa=2] [da=1] data=3c20f378
+                3565: Testbench: Sending packet from 0 to 3, Data = 75c50deb
+                3605: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = 20c4b341, Valid = 0
+                3615: FIFO Write: Data = 20c4b341, Write Ptr =  6, Count =  2
+Sending packet @ 3625 [sa=0] [da=3] data=75c50deb
+                3625: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 7968bdf2, Valid = 0
+                3635: FIFO Write: Data = 7968bdf2, Write Ptr =  6, Count =  0
+                3695: Testbench: Sending packet from 3 to 0, Data = 634bf9c6
+                3705: Portout: Serialization of 359fdd6b completed.
+                3715: Testbench: Sending packet from 1 to 2, Data = de7502bc
+Received 359fdd6b @ 3725 and match found  
+Sending packet @ 3755 [sa=3] [da=0] data=634bf9c6
+                3755: Portout: Serialization of 81174a02 completed.
+Received 81174a02 @ 3775 and match found  
+                3825: FIFO Read: Data = 359fdd6b, Read Ptr =  6, Count =  1
+                3835: Switch Routing: From Input           0 to Address 3, Data = e5730aca, Latched Data = 359fdd6b, Valido_n = 1
+Sending packet @ 3855 [sa=1] [da=2] data=de7502bc
+                3855: Portout: Din = e5730aca
+                3915: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = 3c20f378, Valid = 0
+                3925: FIFO Write: Data = 3c20f378, Write Ptr =  6, Count =  6
+                3975: FIFO Read: Data = 81174a02, Read Ptr =  6, Count =  1
+                3985: Switch Routing: From Input           1 to Address 2, Data = 7968bdf2, Latched Data = 81174a02, Valido_n = 1
+                4005: Testbench: Sending packet from 2 to 1, Data = 85d79a0b
+Sending packet @ 4005 [sa=2] [da=1] data=85d79a0b
+                4005: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 75c50deb, Valid = 0
+                4005: Portout: Din = 7968bdf2
+                4015: FIFO Write: Data = 75c50deb, Write Ptr =  7, Count =  0
+                4095: Testbench: Sending packet from 0 to 3, Data = 42f24185
+                4135: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = 634bf9c6, Valid = 0
+                4145: FIFO Write: Data = 634bf9c6, Write Ptr =  7, Count =  3
+                4175: Portout: Serialization of e5730aca completed.
+Received e5730aca @ 4195 and match found  
+                4225: Testbench: Sending packet from 3 to 0, Data = 9dcc603b
+                4235: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = de7502bc, Valid = 0
+Sending packet @ 4245 [sa=0] [da=3] data=42f24185
+                4245: FIFO Write: Data = de7502bc, Write Ptr =  7, Count =  0
+                4295: FIFO Read: Data = f4007ae8, Read Ptr =  4, Count =  4
+                4305: Switch Routing: From Input           3 to Address 0, Data = c03b2280, Latched Data = f4007ae8, Valido_n = 1
+                4325: Testbench: Sending packet from 1 to 2, Data = bf23327e
+                4325: Portout: Din = c03b2280
+                4325: Portout: Serialization of 7968bdf2 completed.
+Sending packet @ 4335 [sa=1] [da=2] data=bf23327e
+Received 7968bdf2 @ 4345 and match found  
+Sending packet @ 4365 [sa=3] [da=0] data=9dcc603b
+                4385: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = 85d79a0b, Valid = 0
+                4395: FIFO Write: Data = 85d79a0b, Write Ptr =  7, Count =  7
+                4475: Testbench: Sending packet from 2 to 1, Data = 78d99bf1
+Sending packet @ 4485 [sa=2] [da=1] data=78d99bf1
+                4585: FIFO Read: Data = 7968bdf2, Read Ptr =  7, Count =  1
+                4595: Switch Routing: From Input           1 to Address 2, Data = de7502bc, Latched Data = 7968bdf2, Valido_n = 1
+                4615: Portout: Din = de7502bc
+                4625: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 42f24185, Valid = 0
+                4625: FIFO Read: Data = c03b2280, Read Ptr =  5, Count =  3
+                4635: Switch Routing: From Input           3 to Address 0, Data = 0effe91d, Latched Data = c03b2280, Valido_n = 1
+                4635: FIFO Write: Data = 42f24185, Write Ptr =  8, Count =  1
+                4645: Portout: Serialization of c03b2280 completed.
+                4655: Portout: Din = 0effe91d
+Received c03b2280 @ 4665 and match found  
+                4715: Testbench: Sending packet from 0 to 3, Data = 31230762
+                4715: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = bf23327e, Valid = 0
+                4725: FIFO Write: Data = bf23327e, Write Ptr =  8, Count =  0
+                4745: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = 9dcc603b, Valid = 0
+                4755: FIFO Write: Data = 9dcc603b, Write Ptr =  8, Count =  2
+Sending packet @ 4795 [sa=0] [da=3] data=31230762
+                4805: Testbench: Sending packet from 1 to 2, Data = 4fa1559f
+                4835: Testbench: Sending packet from 3 to 0, Data = 7c6da9f8
+Sending packet @ 4835 [sa=3] [da=0] data=7c6da9f8
+                4865: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = 78d99bf1, Valid = 0
+                4875: FIFO Write: Data = 78d99bf1, Write Ptr =  8, Count =  8
+                4935: Portout: Serialization of de7502bc completed.
+Sending packet @ 4955 [sa=1] [da=2] data=4fa1559f
+                4955: Testbench: Sending packet from 2 to 1, Data = cfc4569f
+Sending packet @ 4955 [sa=2] [da=1] data=cfc4569f
+Received de7502bc @ 4955 and match found  
+                4955: FIFO Read: Data = 0effe91d, Read Ptr =  6, Count =  3
+                4965: Switch Routing: From Input           3 to Address 0, Data = 20c4b341, Latched Data = 0effe91d, Valido_n = 1
+                4975: Portout: Serialization of 0effe91d completed.
+                4985: Portout: Din = 20c4b341
+Received 0effe91d @ 4995 and match found  
+                5065: FIFO Read: Data = de7502bc, Read Ptr =  8, Count =  1
+                5075: Switch Routing: From Input           1 to Address 2, Data = bf23327e, Latched Data = de7502bc, Valido_n = 1
+                5095: Portout: Din = bf23327e
+                5175: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 31230762, Valid = 0
+                5185: FIFO Write: Data = 31230762, Write Ptr =  9, Count =  2
+                5215: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = 7c6da9f8, Valid = 0
+                5225: FIFO Write: Data = 7c6da9f8, Write Ptr =  9, Count =  2
+                5285: FIFO Read: Data = 20c4b341, Read Ptr =  7, Count =  3
+                5295: Switch Routing: From Input           3 to Address 0, Data = 634bf9c6, Latched Data = 20c4b341, Valido_n = 1
+                5305: Portout: Serialization of 20c4b341 completed.
+                5315: Portout: Din = 634bf9c6
+Received 20c4b341 @ 5325 and match found  
+                5335: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 4fa1559f, Valid = 0
+                5335: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = cfc4569f, Valid = 0
+                5345: FIFO Write: Data = 4fa1559f, Write Ptr =  9, Count =  0
+                5345: FIFO Write: Data = cfc4569f, Write Ptr =  9, Count =  9
+                5415: Portout: Serialization of bf23327e completed.
+Received bf23327e @ 5435 and match found  
+                5535: FIFO Read: Data = 00000000, Read Ptr =  0, Count = 10
+                5545: Switch Routing: From Input           2 to Address 1, Data = 06b97b0d, Latched Data = 00000000, Valido_n = 1
+                5565: Portout: Din = 06b97b0d
+                5615: FIFO Read: Data = 634bf9c6, Read Ptr =  8, Count =  2
+                5625: Switch Routing: From Input           3 to Address 0, Data = 9dcc603b, Latched Data = 634bf9c6, Valido_n = 1
+                5635: Portout: Serialization of 634bf9c6 completed.
+                5645: Portout: Din = 9dcc603b
+Received 634bf9c6 @ 5655 and match found  
+                5865: FIFO Read: Data = 06b97b0d, Read Ptr =  1, Count =  9
+                5875: Switch Routing: From Input           2 to Address 1, Data = 7cfde9f9, Latched Data = 06b97b0d, Valido_n = 1
+                5885: Portout: Serialization of 06b97b0d completed.
+                5895: Portout: Din = 7cfde9f9
+Received 06b97b0d @ 5905 and match found  
+                5945: FIFO Read: Data = 9dcc603b, Read Ptr =  9, Count =  1
+                5955: Switch Routing: From Input           3 to Address 0, Data = 7c6da9f8, Latched Data = 9dcc603b, Valido_n = 1
+                5965: Portout: Serialization of 9dcc603b completed.
+                5975: Portout: Din = 7c6da9f8
+Received 9dcc603b @ 5985 and match found  
+                6195: FIFO Read: Data = 7cfde9f9, Read Ptr =  2, Count =  8
+                6205: Switch Routing: From Input           2 to Address 1, Data = 8932d612, Latched Data = 7cfde9f9, Valido_n = 1
+                6215: Portout: Serialization of 7cfde9f9 completed.
+                6225: Portout: Din = 8932d612
+Received 7cfde9f9 @ 6235 and match found  
+                6295: Portout: Serialization of 7c6da9f8 completed.
+Received 7c6da9f8 @ 6315 and match found  
+                6525: FIFO Read: Data = 8932d612, Read Ptr =  3, Count =  7
+                6535: Switch Routing: From Input           2 to Address 1, Data = b1ef6263, Latched Data = 8932d612, Valido_n = 1
+                6545: Portout: Serialization of 8932d612 completed.
+                6555: Portout: Din = b1ef6263
+Received 8932d612 @ 6565 and match found  
+                6855: FIFO Read: Data = b1ef6263, Read Ptr =  4, Count =  6
+                6865: Switch Routing: From Input           2 to Address 1, Data = 86bc380d, Latched Data = b1ef6263, Valido_n = 1
+                6875: Portout: Serialization of b1ef6263 completed.
+                6885: Portout: Din = 86bc380d
+Received b1ef6263 @ 6895 and match found  
+                6915: FIFO Read: Data = e5730aca, Read Ptr =  7, Count =  3
+                6925: Switch Routing: From Input           0 to Address 3, Data = 75c50deb, Latched Data = e5730aca, Valido_n = 1
+                6945: Portout: Din = 75c50deb
+                7185: FIFO Read: Data = 86bc380d, Read Ptr =  5, Count =  5
+                7195: Switch Routing: From Input           2 to Address 1, Data = 11844923, Latched Data = 86bc380d, Valido_n = 1
+                7205: Portout: Serialization of 86bc380d completed.
+                7215: Portout: Din = 11844923
+Received 86bc380d @ 7225 and match found  
+                7245: FIFO Read: Data = 75c50deb, Read Ptr =  8, Count =  2
+                7255: Switch Routing: From Input           0 to Address 3, Data = 42f24185, Latched Data = 75c50deb, Valido_n = 1
+                7265: Portout: Serialization of 75c50deb completed.
+                7275: Portout: Din = 42f24185
+Received 75c50deb @ 7285 and match found  
+                7515: FIFO Read: Data = 11844923, Read Ptr =  6, Count =  4
+                7525: Switch Routing: From Input           2 to Address 1, Data = 3c20f378, Latched Data = 11844923, Valido_n = 1
+                7535: Portout: Serialization of 11844923 completed.
+                7545: Portout: Din = 3c20f378
+Received 11844923 @ 7555 and match found  
+                7575: FIFO Read: Data = 42f24185, Read Ptr =  9, Count =  1
+                7585: Switch Routing: From Input           0 to Address 3, Data = 31230762, Latched Data = 42f24185, Valido_n = 1
+                7595: Portout: Serialization of 42f24185 completed.
+                7605: Portout: Din = 31230762
+Received 42f24185 @ 7615 and match found  
+                7845: FIFO Read: Data = 3c20f378, Read Ptr =  7, Count =  3
+                7855: Switch Routing: From Input           2 to Address 1, Data = 85d79a0b, Latched Data = 3c20f378, Valido_n = 1
+                7865: Portout: Serialization of 3c20f378 completed.
+                7875: Portout: Din = 85d79a0b
+Received 3c20f378 @ 7885 and match found  
+                7925: Portout: Serialization of 31230762 completed.
+Received 31230762 @ 7945 and match found  
+                8175: FIFO Read: Data = 85d79a0b, Read Ptr =  8, Count =  2
+                8185: Switch Routing: From Input           2 to Address 1, Data = 78d99bf1, Latched Data = 85d79a0b, Valido_n = 1
+                8195: Portout: Serialization of 85d79a0b completed.
+                8205: Portout: Din = 78d99bf1
+Received 85d79a0b @ 8215 and match found  
+                8505: FIFO Read: Data = 78d99bf1, Read Ptr =  9, Count =  1
+                8515: Switch Routing: From Input           2 to Address 1, Data = cfc4569f, Latched Data = 78d99bf1, Valido_n = 1
+                8525: Portout: Serialization of 78d99bf1 completed.
+                8535: Portout: Din = cfc4569f
+Received 78d99bf1 @ 8545 and match found  
+                8855: Portout: Serialization of cfc4569f completed.
+Received cfc4569f @ 8875 and match found  
+                8885: FIFO Read: Data = bf23327e, Read Ptr =  9, Count =  1
+                8895: Switch Routing: From Input           1 to Address 2, Data = 4fa1559f, Latched Data = bf23327e, Valido_n = 1
+                8915: Portout: Din = 4fa1559f
+                9235: Portout: Serialization of 4fa1559f completed.
+Received 4fa1559f @ 9255 and match found  
+$finish called from file "testbench.sv", line 123.
+
+*******************End of Simulation Report*******************
+
+Number of Errors =           0
+Number of unmatched packets =           0
+Port  0 [transmitted= 10] [received= 10] [expected= 10]
+Port  1 [transmitted= 10] [received= 10] [expected= 10]
+Port  2 [transmitted= 10] [received= 10] [expected= 10]
+Port  3 [transmitted= 10] [received= 10] [expected= 10]
+Port  4 [transmitted=  0] [received=  0] [expected=  0]
+Port  5 [transmitted=  0] [received=  0] [expected=  0]
+Port  6 [transmitted=  0] [received=  0] [expected=  0]
+Port  7 [transmitted=  0] [received=  0] [expected=  0]
+$finish at simulation time                15425
+
+----
+
+STARTING 8-PORT TEST!!!!
+                 155: Testbench: Sending packet from 0 to 3, Data = 12153524
+Sending packet @  155 [sa=0] [da=3] data=12153524
+                 155: Testbench: Sending packet from 1 to 2, Data = 8484d609
+Sending packet @  155 [sa=1] [da=2] data=8484d609
+                 155: Testbench: Sending packet from 2 to 1, Data = 06b97b0d
+                 155: Testbench: Sending packet from 3 to 0, Data = b2c28465
+Sending packet @  155 [sa=3] [da=0] data=b2c28465
+                 155: Testbench: Sending packet from 4 to 5, Data = 00f3e301
+                 155: Testbench: Sending packet from 5 to 4, Data = 3b23f176
+                 155: Testbench: Sending packet from 6 to 7, Data = 76d457ed
+                 155: Testbench: Sending packet from 7 to 6, Data = 7cfde9f9
+Sending packet @  155 [sa=7] [da=6] data=7cfde9f9
+Sending packet @  245 [sa=4] [da=5] data=00f3e301
+Sending packet @  275 [sa=6] [da=7] data=76d457ed
+Sending packet @  325 [sa=5] [da=4] data=3b23f176
+Sending packet @  325 [sa=2] [da=1] data=06b97b0d
+                 535: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 12153524, Valid = 0
+                 535: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 8484d609, Valid = 0
+                 535: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = b2c28465, Valid = 0
+                 535: -- PORTIN COMPLETE -- Portin: Address = 6, Payload = 7cfde9f9, Valid = 0
+                 545: FIFO Write: Data = 12153524, Write Ptr =  0, Count =  0
+                 545: FIFO Write: Data = 8484d609, Write Ptr =  0, Count =  0
+                 545: FIFO Write: Data = b2c28465, Write Ptr =  0, Count =  0
+                 545: FIFO Write: Data = 7cfde9f9, Write Ptr =  0, Count =  0
+                 625: Testbench: Sending packet from 7 to 6, Data = e2f784c5
+Sending packet @  625 [sa=7] [da=6] data=e2f784c5
+                 625: Testbench: Sending packet from 3 to 0, Data = 72aff7e5
+Sending packet @  625 [sa=3] [da=0] data=72aff7e5
+                 625: Testbench: Sending packet from 1 to 2, Data = 8932d612
+                 625: Testbench: Sending packet from 0 to 3, Data = 793069f2
+Sending packet @  625 [sa=0] [da=3] data=793069f2
+                 625: -- PORTIN COMPLETE -- Portin: Address = 5, Payload = 00f3e301, Valid = 0
+                 635: FIFO Write: Data = 00f3e301, Write Ptr =  0, Count =  0
+                 655: -- PORTIN COMPLETE -- Portin: Address = 7, Payload = 76d457ed, Valid = 0
+                 665: FIFO Write: Data = 76d457ed, Write Ptr =  0, Count =  0
+                 705: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = 06b97b0d, Valid = 0
+                 705: -- PORTIN COMPLETE -- Portin: Address = 4, Payload = 3b23f176, Valid = 0
+                 715: Testbench: Sending packet from 4 to 5, Data = f4007ae8
+Sending packet @  715 [sa=4] [da=5] data=f4007ae8
+                 715: FIFO Write: Data = 06b97b0d, Write Ptr =  0, Count =  0
+                 715: FIFO Write: Data = 3b23f176, Write Ptr =  0, Count =  0
+                 745: Testbench: Sending packet from 6 to 7, Data = 2e58495c
+Sending packet @  745 [sa=6] [da=7] data=2e58495c
+                 795: Testbench: Sending packet from 5 to 4, Data = 96ab582d
+Sending packet @  795 [sa=5] [da=4] data=96ab582d
+                 795: Testbench: Sending packet from 2 to 1, Data = b1ef6263
+Sending packet @  815 [sa=1] [da=2] data=8932d612
+                 885: FIFO Read: Data = 00000000, Read Ptr =  0, Count =  1
+                 885: FIFO Read: Data = 00000000, Read Ptr =  0, Count =  1
+                 885: FIFO Read: Data = 00000000, Read Ptr =  0, Count =  1
+                 885: FIFO Read: Data = 00000000, Read Ptr =  0, Count =  1
+Sending packet @  895 [sa=2] [da=1] data=b1ef6263
+                 895: Switch Routing: From Input           0 to Address 3, Data = 12153524, Latched Data = 00000000, Valido_n = 1
+                 895: Switch Routing: From Input           1 to Address 2, Data = 8484d609, Latched Data = 00000000, Valido_n = 1
+                 895: Switch Routing: From Input           3 to Address 0, Data = b2c28465, Latched Data = 00000000, Valido_n = 1
+                 895: Switch Routing: From Input           7 to Address 6, Data = 7cfde9f9, Latched Data = 00000000, Valido_n = 1
+                 915: Portout: Din = b2c28465
+                 915: Portout: Din = 8484d609
+                 915: Portout: Din = 12153524
+                 915: Portout: Din = 7cfde9f9
+                 975: FIFO Read: Data = 00000000, Read Ptr =  0, Count =  1
+                 985: Switch Routing: From Input           4 to Address 5, Data = 00f3e301, Latched Data = 00000000, Valido_n = 1
+                1005: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 793069f2, Valid = 0
+                1005: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = 72aff7e5, Valid = 0
+                1005: Portout: Din = 00f3e301
+                1005: -- PORTIN COMPLETE -- Portin: Address = 6, Payload = e2f784c5, Valid = 0
+                1015: FIFO Write: Data = 793069f2, Write Ptr =  1, Count =  0
+                1015: FIFO Write: Data = 72aff7e5, Write Ptr =  1, Count =  0
+                1015: FIFO Write: Data = e2f784c5, Write Ptr =  1, Count =  0
+                1095: Testbench: Sending packet from 0 to 3, Data = c03b2280
+                1095: Testbench: Sending packet from 3 to 0, Data = 557845aa
+Sending packet @ 1095 [sa=3] [da=0] data=557845aa
+                1095: Testbench: Sending packet from 7 to 6, Data = cb203e96
+Sending packet @ 1095 [sa=7] [da=6] data=cb203e96
+                1095: -- PORTIN COMPLETE -- Portin: Address = 5, Payload = f4007ae8, Valid = 0
+                1105: FIFO Write: Data = f4007ae8, Write Ptr =  1, Count =  0
+                1125: -- PORTIN COMPLETE -- Portin: Address = 7, Payload = 2e58495c, Valid = 0
+                1135: FIFO Write: Data = 2e58495c, Write Ptr =  1, Count =  1
+                1175: -- PORTIN COMPLETE -- Portin: Address = 4, Payload = 96ab582d, Valid = 0
+                1185: Testbench: Sending packet from 4 to 5, Data = 86bc380d
+Sending packet @ 1185 [sa=4] [da=5] data=86bc380d
+                1185: FIFO Write: Data = 96ab582d, Write Ptr =  1, Count =  1
+                1195: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 8932d612, Valid = 0
+                1205: FIFO Write: Data = 8932d612, Write Ptr =  1, Count =  0
+                1215: Testbench: Sending packet from 6 to 7, Data = 359fdd6b
+Sending packet @ 1215 [sa=6] [da=7] data=359fdd6b
+                1235: Portout: Serialization of b2c28465 completed.
+                1235: Portout: Serialization of 8484d609 completed.
+                1235: Portout: Serialization of 12153524 completed.
+                1235: Portout: Serialization of 7cfde9f9 completed.
+Sending packet @ 1255 [sa=0] [da=3] data=c03b2280
+Received b2c28465 @ 1255 and match found  
+Received 8484d609 @ 1255 and match found  
+Received 12153524 @ 1255 and match found  
+Received 7cfde9f9 @ 1255 and match found  
+                1265: Testbench: Sending packet from 5 to 4, Data = 81174a02
+Sending packet @ 1265 [sa=5] [da=4] data=81174a02
+                1275: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = b1ef6263, Valid = 0
+                1285: Testbench: Sending packet from 1 to 2, Data = 0effe91d
+Sending packet @ 1285 [sa=1] [da=2] data=0effe91d
+                1285: FIFO Write: Data = b1ef6263, Write Ptr =  1, Count =  1
+                1325: Portout: Serialization of 00f3e301 completed.
+Received 00f3e301 @ 1345 and match found  
+                1355: FIFO Read: Data = 12153524, Read Ptr =  1, Count =  1
+                1355: FIFO Read: Data = b2c28465, Read Ptr =  1, Count =  1
+                1355: FIFO Read: Data = 7cfde9f9, Read Ptr =  1, Count =  1
+                1365: Testbench: Sending packet from 2 to 1, Data = 11844923
+                1365: Switch Routing: From Input           0 to Address 3, Data = 793069f2, Latched Data = 12153524, Valido_n = 1
+                1365: Switch Routing: From Input           3 to Address 0, Data = 72aff7e5, Latched Data = b2c28465, Valido_n = 1
+                1365: Switch Routing: From Input           7 to Address 6, Data = e2f784c5, Latched Data = 7cfde9f9, Valido_n = 1
+                1385: Portout: Din = 72aff7e5
+                1385: Portout: Din = 793069f2
+                1385: Portout: Din = e2f784c5
+                1445: FIFO Read: Data = 00f3e301, Read Ptr =  1, Count =  1
+                1455: Switch Routing: From Input           4 to Address 5, Data = f4007ae8, Latched Data = 00f3e301, Valido_n = 1
+Sending packet @ 1465 [sa=2] [da=1] data=11844923
+                1475: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = 557845aa, Valid = 0
+                1475: Portout: Din = f4007ae8
+                1475: -- PORTIN COMPLETE -- Portin: Address = 6, Payload = cb203e96, Valid = 0
+                1485: FIFO Write: Data = 557845aa, Write Ptr =  2, Count =  0
+                1485: FIFO Write: Data = cb203e96, Write Ptr =  2, Count =  0
+                1545: FIFO Read: Data = 8484d609, Read Ptr =  1, Count =  1
+                1555: Switch Routing: From Input           1 to Address 2, Data = 8932d612, Latched Data = 8484d609, Valido_n = 1
+                1565: Testbench: Sending packet from 7 to 6, Data = e5730aca
+Sending packet @ 1565 [sa=7] [da=6] data=e5730aca
+                1565: Testbench: Sending packet from 3 to 0, Data = 7968bdf2
+                1565: -- PORTIN COMPLETE -- Portin: Address = 5, Payload = 86bc380d, Valid = 0
+                1575: Portout: Din = 8932d612
+                1575: FIFO Write: Data = 86bc380d, Write Ptr =  2, Count =  0
+                1595: -- PORTIN COMPLETE -- Portin: Address = 7, Payload = 359fdd6b, Valid = 0
+                1605: FIFO Write: Data = 359fdd6b, Write Ptr =  2, Count =  2
+                1635: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = c03b2280, Valid = 0
+                1645: FIFO Write: Data = c03b2280, Write Ptr =  2, Count =  0
+                1645: -- PORTIN COMPLETE -- Portin: Address = 4, Payload = 81174a02, Valid = 0
+                1655: Testbench: Sending packet from 4 to 5, Data = 20c4b341
+Sending packet @ 1655 [sa=4] [da=5] data=20c4b341
+                1655: FIFO Write: Data = 81174a02, Write Ptr =  2, Count =  2
+Sending packet @ 1665 [sa=3] [da=0] data=7968bdf2
+                1665: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 0effe91d, Valid = 0
+                1675: FIFO Write: Data = 0effe91d, Write Ptr =  2, Count =  0
+                1685: Testbench: Sending packet from 6 to 7, Data = 3c20f378
+Sending packet @ 1685 [sa=6] [da=7] data=3c20f378
+                1705: Portout: Serialization of 72aff7e5 completed.
+                1705: Portout: Serialization of 793069f2 completed.
+                1705: Portout: Serialization of e2f784c5 completed.
+                1725: Testbench: Sending packet from 0 to 3, Data = 75c50deb
+Received 72aff7e5 @ 1725 and match found  
+Received 793069f2 @ 1725 and match found  
+Received e2f784c5 @ 1725 and match found  
+                1735: Testbench: Sending packet from 5 to 4, Data = 634bf9c6
+                1755: Testbench: Sending packet from 1 to 2, Data = de7502bc
+Sending packet @ 1785 [sa=0] [da=3] data=75c50deb
+Sending packet @ 1795 [sa=5] [da=4] data=634bf9c6
+                1795: Portout: Serialization of f4007ae8 completed.
+Received f4007ae8 @ 1815 and match found  
+                1825: FIFO Read: Data = 72aff7e5, Read Ptr =  2, Count =  1
+                1825: FIFO Read: Data = e2f784c5, Read Ptr =  2, Count =  1
+                1835: Switch Routing: From Input           3 to Address 0, Data = 557845aa, Latched Data = 72aff7e5, Valido_n = 1
+                1835: Switch Routing: From Input           7 to Address 6, Data = cb203e96, Latched Data = e2f784c5, Valido_n = 1
+                1845: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = 11844923, Valid = 0
+                1855: Portout: Din = 557845aa
+                1855: FIFO Write: Data = 11844923, Write Ptr =  2, Count =  2
+                1855: Portout: Din = cb203e96
+Sending packet @ 1895 [sa=1] [da=2] data=de7502bc
+                1895: Portout: Serialization of 8932d612 completed.
+Received 8932d612 @ 1915 and match found  
+                1915: FIFO Read: Data = f4007ae8, Read Ptr =  2, Count =  1
+                1925: Switch Routing: From Input           4 to Address 5, Data = 86bc380d, Latched Data = f4007ae8, Valido_n = 1
+                1935: Testbench: Sending packet from 2 to 1, Data = 85d79a0b
+Sending packet @ 1935 [sa=2] [da=1] data=85d79a0b
+                1945: Portout: Din = 86bc380d
+                1945: -- PORTIN COMPLETE -- Portin: Address = 6, Payload = e5730aca, Valid = 0
+                1955: FIFO Write: Data = e5730aca, Write Ptr =  3, Count =  0
+                2015: FIFO Read: Data = 8932d612, Read Ptr =  2, Count =  1
+                2025: Switch Routing: From Input           1 to Address 2, Data = 0effe91d, Latched Data = 8932d612, Valido_n = 1
+                2035: Testbench: Sending packet from 7 to 6, Data = 42f24185
+                2035: -- PORTIN COMPLETE -- Portin: Address = 5, Payload = 20c4b341, Valid = 0
+                2045: Portout: Din = 0effe91d
+                2045: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = 7968bdf2, Valid = 0
+                2045: FIFO Write: Data = 20c4b341, Write Ptr =  3, Count =  0
+                2055: FIFO Write: Data = 7968bdf2, Write Ptr =  3, Count =  0
+                2065: -- PORTIN COMPLETE -- Portin: Address = 7, Payload = 3c20f378, Valid = 0
+                2075: FIFO Write: Data = 3c20f378, Write Ptr =  3, Count =  3
+                2125: Testbench: Sending packet from 4 to 5, Data = 9dcc603b
+                2135: Testbench: Sending packet from 3 to 0, Data = bf23327e
+Sending packet @ 2145 [sa=3] [da=0] data=bf23327e
+                2155: Testbench: Sending packet from 6 to 7, Data = 78d99bf1
+Sending packet @ 2165 [sa=6] [da=7] data=78d99bf1
+                2165: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 75c50deb, Valid = 0
+                2175: FIFO Write: Data = 75c50deb, Write Ptr =  3, Count =  1
+                2175: Portout: Serialization of 557845aa completed.
+                2175: -- PORTIN COMPLETE -- Portin: Address = 4, Payload = 634bf9c6, Valid = 0
+                2175: Portout: Serialization of cb203e96 completed.
+Sending packet @ 2185 [sa=7] [da=6] data=42f24185
+                2185: FIFO Write: Data = 634bf9c6, Write Ptr =  3, Count =  3
+Received 557845aa @ 2195 and match found  
+Received cb203e96 @ 2195 and match found  
+                2255: Testbench: Sending packet from 0 to 3, Data = 31230762
+Sending packet @ 2265 [sa=4] [da=5] data=9dcc603b
+                2265: Testbench: Sending packet from 5 to 4, Data = 4fa1559f
+                2265: Portout: Serialization of 86bc380d completed.
+                2275: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = de7502bc, Valid = 0
+Received 86bc380d @ 2285 and match found  
+                2285: FIFO Write: Data = de7502bc, Write Ptr =  3, Count =  0
+                2285: FIFO Read: Data = 00000000, Read Ptr =  0, Count =  4
+                2295: Switch Routing: From Input           6 to Address 7, Data = 76d457ed, Latched Data = 00000000, Valido_n = 1
+                2295: FIFO Read: Data = cb203e96, Read Ptr =  3, Count =  1
+                2305: Switch Routing: From Input           7 to Address 6, Data = e5730aca, Latched Data = cb203e96, Valido_n = 1
+                2315: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = 85d79a0b, Valid = 0
+                2315: Portout: Din = 76d457ed
+                2325: FIFO Write: Data = 85d79a0b, Write Ptr =  3, Count =  3
+                2325: Portout: Din = e5730aca
+Sending packet @ 2335 [sa=0] [da=3] data=31230762
+                2335: FIFO Read: Data = 00000000, Read Ptr =  0, Count =  4
+                2345: Switch Routing: From Input           5 to Address 4, Data = 3b23f176, Latched Data = 00000000, Valido_n = 1
+                2365: Testbench: Sending packet from 1 to 2, Data = 7c6da9f8
+Sending packet @ 2365 [sa=1] [da=2] data=7c6da9f8
+                2365: Portout: Serialization of 0effe91d completed.
+                2365: Portout: Din = 3b23f176
+Received 0effe91d @ 2385 and match found  
+                2395: FIFO Read: Data = 557845aa, Read Ptr =  3, Count =  1
+                2405: Testbench: Sending packet from 2 to 1, Data = cfc4569f
+Sending packet @ 2405 [sa=2] [da=1] data=cfc4569f
+                2405: Switch Routing: From Input           3 to Address 0, Data = 7968bdf2, Latched Data = 557845aa, Valido_n = 1
+Sending packet @ 2415 [sa=5] [da=4] data=4fa1559f
+                2425: Portout: Din = 7968bdf2
+                2525: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = bf23327e, Valid = 0
+                2535: FIFO Write: Data = bf23327e, Write Ptr =  4, Count =  0
+                2545: -- PORTIN COMPLETE -- Portin: Address = 7, Payload = 78d99bf1, Valid = 0
+                2555: FIFO Write: Data = 78d99bf1, Write Ptr =  4, Count =  3
+                2565: -- PORTIN COMPLETE -- Portin: Address = 6, Payload = 42f24185, Valid = 0
+                2575: FIFO Write: Data = 42f24185, Write Ptr =  4, Count =  0
+                2615: Testbench: Sending packet from 3 to 0, Data = adcbc05b
+                2625: FIFO Read: Data = 0effe91d, Read Ptr =  3, Count =  1
+                2635: Testbench: Sending packet from 6 to 7, Data = a4ae3249
+Sending packet @ 2635 [sa=6] [da=7] data=a4ae3249
+                2635: Switch Routing: From Input           1 to Address 2, Data = de7502bc, Latched Data = 0effe91d, Valido_n = 1
+                2635: Portout: Serialization of 76d457ed completed.
+                2645: -- PORTIN COMPLETE -- Portin: Address = 5, Payload = 9dcc603b, Valid = 0
+                2645: Portout: Serialization of e5730aca completed.
+                2655: Testbench: Sending packet from 7 to 6, Data = ebfec0d7
+Sending packet @ 2655 [sa=7] [da=6] data=ebfec0d7
+Received 76d457ed @ 2655 and match found  
+                2655: Portout: Din = de7502bc
+                2655: FIFO Write: Data = 9dcc603b, Write Ptr =  4, Count =  1
+Received e5730aca @ 2665 and match found  
+                2665: FIFO Read: Data = 3b23f176, Read Ptr =  1, Count =  3
+                2675: Switch Routing: From Input           5 to Address 4, Data = 96ab582d, Latched Data = 3b23f176, Valido_n = 1
+                2685: Portout: Serialization of 3b23f176 completed.
+                2695: Portout: Din = 96ab582d
+Received 3b23f176 @ 2705 and match found  
+                2715: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 31230762, Valid = 0
+                2725: FIFO Write: Data = 31230762, Write Ptr =  4, Count =  2
+                2735: Testbench: Sending packet from 4 to 5, Data = 4b212f96
+                2745: Portout: Serialization of 7968bdf2 completed.
+                2745: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 7c6da9f8, Valid = 0
+                2755: FIFO Write: Data = 7c6da9f8, Write Ptr =  4, Count =  0
+Received 7968bdf2 @ 2765 and match found  
+Sending packet @ 2775 [sa=4] [da=5] data=4b212f96
+Sending packet @ 2785 [sa=3] [da=0] data=adcbc05b
+                2785: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = cfc4569f, Valid = 0
+                2795: FIFO Write: Data = cfc4569f, Write Ptr =  4, Count =  4
+                2795: -- PORTIN COMPLETE -- Portin: Address = 4, Payload = 4fa1559f, Valid = 0
+                2805: Testbench: Sending packet from 0 to 3, Data = e12ccec2
+                2805: FIFO Write: Data = 4fa1559f, Write Ptr =  4, Count =  2
+                2835: Testbench: Sending packet from 1 to 2, Data = bb825a77
+Sending packet @ 2845 [sa=0] [da=3] data=e12ccec2
+                2875: Testbench: Sending packet from 2 to 1, Data = 090cdb12
+Sending packet @ 2875 [sa=2] [da=1] data=090cdb12
+                2875: FIFO Read: Data = 7968bdf2, Read Ptr =  4, Count =  1
+Sending packet @ 2885 [sa=1] [da=2] data=bb825a77
+                2885: Testbench: Sending packet from 5 to 4, Data = 36e5816d
+                2885: Switch Routing: From Input           3 to Address 0, Data = bf23327e, Latched Data = 7968bdf2, Valido_n = 1
+                2905: Portout: Din = bf23327e
+                2915: FIFO Read: Data = e5730aca, Read Ptr =  4, Count =  1
+                2925: Switch Routing: From Input           7 to Address 6, Data = 42f24185, Latched Data = e5730aca, Valido_n = 1
+                2945: Portout: Din = 42f24185
+                2975: Portout: Serialization of de7502bc completed.
+Received de7502bc @ 2995 and match found  
+                2995: FIFO Read: Data = 96ab582d, Read Ptr =  2, Count =  3
+                3005: Switch Routing: From Input           5 to Address 4, Data = 81174a02, Latched Data = 96ab582d, Valido_n = 1
+Sending packet @ 3015 [sa=5] [da=4] data=36e5816d
+                3015: Portout: Serialization of 96ab582d completed.
+                3015: -- PORTIN COMPLETE -- Portin: Address = 7, Payload = a4ae3249, Valid = 0
+                3025: FIFO Read: Data = 86bc380d, Read Ptr =  3, Count =  2
+                3025: Portout: Din = 81174a02
+                3025: FIFO Write: Data = a4ae3249, Write Ptr =  5, Count =  4
+Received 96ab582d @ 3035 and match found  
+                3035: Switch Routing: From Input           4 to Address 5, Data = 20c4b341, Latched Data = 86bc380d, Valido_n = 1
+                3035: -- PORTIN COMPLETE -- Portin: Address = 6, Payload = ebfec0d7, Valid = 0
+                3045: FIFO Write: Data = ebfec0d7, Write Ptr =  5, Count =  0
+                3055: Portout: Din = 20c4b341
+                3095: FIFO Read: Data = de7502bc, Read Ptr =  4, Count =  1
+                3105: Testbench: Sending packet from 6 to 7, Data = 0fd28f1f
+Sending packet @ 3105 [sa=6] [da=7] data=0fd28f1f
+                3105: Switch Routing: From Input           1 to Address 2, Data = 7c6da9f8, Latched Data = de7502bc, Valido_n = 1
+                3125: Testbench: Sending packet from 7 to 6, Data = 42d92f85
+Sending packet @ 3125 [sa=7] [da=6] data=42d92f85
+                3125: Portout: Din = 7c6da9f8
+                3155: -- PORTIN COMPLETE -- Portin: Address = 5, Payload = 4b212f96, Valid = 0
+                3165: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = adcbc05b, Valid = 0
+                3165: FIFO Write: Data = 4b212f96, Write Ptr =  5, Count =  1
+                3175: FIFO Write: Data = adcbc05b, Write Ptr =  5, Count =  0
+                3225: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = e12ccec2, Valid = 0
+                3225: Portout: Serialization of bf23327e completed.
+                3235: FIFO Write: Data = e12ccec2, Write Ptr =  5, Count =  3
+                3245: Testbench: Sending packet from 4 to 5, Data = 2dda595b
+Received bf23327e @ 3245 and match found  
+                3255: Testbench: Sending packet from 3 to 0, Data = 9ff2ae3f
+                3255: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = 090cdb12, Valid = 0
+                3265: FIFO Read: Data = 793069f2, Read Ptr =  2, Count =  4
+                3265: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = bb825a77, Valid = 0
+                3265: FIFO Write: Data = 090cdb12, Write Ptr =  5, Count =  5
+                3265: Portout: Serialization of 42f24185 completed.
+                3275: Switch Routing: From Input           0 to Address 3, Data = c03b2280, Latched Data = 793069f2, Valido_n = 1
+                3275: FIFO Write: Data = bb825a77, Write Ptr =  5, Count =  0
+Received 42f24185 @ 3285 and match found  
+                3295: Portout: Din = c03b2280
+                3315: Testbench: Sending packet from 0 to 3, Data = 2c156358
+Sending packet @ 3315 [sa=0] [da=3] data=2c156358
+                3345: Testbench: Sending packet from 2 to 1, Data = c71a0c8e
+Sending packet @ 3345 [sa=2] [da=1] data=c71a0c8e
+                3345: Portout: Serialization of 81174a02 completed.
+Sending packet @ 3355 [sa=3] [da=0] data=9ff2ae3f
+                3355: Testbench: Sending packet from 1 to 2, Data = 7d3599fa
+Sending packet @ 3355 [sa=1] [da=2] data=7d3599fa
+                3355: FIFO Read: Data = 20c4b341, Read Ptr =  4, Count =  2
+Received 81174a02 @ 3365 and match found  
+                3365: Switch Routing: From Input           4 to Address 5, Data = 9dcc603b, Latched Data = 20c4b341, Valido_n = 1
+Sending packet @ 3375 [sa=4] [da=5] data=2dda595b
+                3375: Portout: Serialization of 20c4b341 completed.
+                3385: Portout: Din = 9dcc603b
+                3385: FIFO Read: Data = 42f24185, Read Ptr =  5, Count =  1
+Received 20c4b341 @ 3395 and match found  
+                3395: Switch Routing: From Input           7 to Address 6, Data = ebfec0d7, Latched Data = 42f24185, Valido_n = 1
+                3395: -- PORTIN COMPLETE -- Portin: Address = 4, Payload = 36e5816d, Valid = 0
+                3405: FIFO Write: Data = 36e5816d, Write Ptr =  5, Count =  2
+                3415: Portout: Din = ebfec0d7
+                3445: Portout: Serialization of 7c6da9f8 completed.
+Received 7c6da9f8 @ 3465 and match found  
+                3485: Testbench: Sending packet from 5 to 4, Data = 39961773
+Sending packet @ 3485 [sa=5] [da=4] data=39961773
+                3485: -- PORTIN COMPLETE -- Portin: Address = 7, Payload = 0fd28f1f, Valid = 0
+                3495: FIFO Write: Data = 0fd28f1f, Write Ptr =  6, Count =  5
+                3505: -- PORTIN COMPLETE -- Portin: Address = 6, Payload = 42d92f85, Valid = 0
+                3515: FIFO Write: Data = 42d92f85, Write Ptr =  6, Count =  0
+                3575: Testbench: Sending packet from 6 to 7, Data = 9799a82f
+Sending packet @ 3575 [sa=6] [da=7] data=9799a82f
+                3595: Testbench: Sending packet from 7 to 6, Data = afd8565f
+                3595: FIFO Read: Data = c03b2280, Read Ptr =  3, Count =  3
+                3605: Switch Routing: From Input           0 to Address 3, Data = 75c50deb, Latched Data = c03b2280, Valido_n = 1
+                3615: FIFO Read: Data = 7c6da9f8, Read Ptr =  5, Count =  1
+                3615: FIFO Read: Data = 00000000, Read Ptr =  0, Count =  6
+                3615: Portout: Serialization of c03b2280 completed.
+                3625: Switch Routing: From Input           1 to Address 2, Data = bb825a77, Latched Data = 7c6da9f8, Valido_n = 1
+                3625: Switch Routing: From Input           2 to Address 1, Data = 06b97b0d, Latched Data = 00000000, Valido_n = 1
+                3625: Portout: Din = 75c50deb
+Received c03b2280 @ 3635 and match found  
+                3645: Portout: Din = 06b97b0d
+                3645: Portout: Din = bb825a77
+                3685: FIFO Read: Data = 9dcc603b, Read Ptr =  5, Count =  1
+                3695: Switch Routing: From Input           4 to Address 5, Data = 4b212f96, Latched Data = 9dcc603b, Valido_n = 1
+                3695: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 2c156358, Valid = 0
+                3705: FIFO Write: Data = 2c156358, Write Ptr =  6, Count =  2
+                3705: Portout: Serialization of 9dcc603b completed.
+                3715: Portout: Din = 4b212f96
+Received 9dcc603b @ 3725 and match found  
+                3725: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = c71a0c8e, Valid = 0
+                3735: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 7d3599fa, Valid = 0
+                3735: FIFO Write: Data = c71a0c8e, Write Ptr =  6, Count =  5
+                3735: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = 9ff2ae3f, Valid = 0
+                3735: Portout: Serialization of ebfec0d7 completed.
+                3745: FIFO Write: Data = 7d3599fa, Write Ptr =  6, Count =  0
+                3745: FIFO Write: Data = 9ff2ae3f, Write Ptr =  6, Count =  1
+Sending packet @ 3755 [sa=7] [da=6] data=afd8565f
+Received ebfec0d7 @ 3755 and match found  
+                3755: -- PORTIN COMPLETE -- Portin: Address = 5, Payload = 2dda595b, Valid = 0
+                3765: FIFO Write: Data = 2dda595b, Write Ptr =  6, Count =  0
+                3785: Testbench: Sending packet from 0 to 3, Data = 7bf8fdf7
+Sending packet @ 3785 [sa=0] [da=3] data=7bf8fdf7
+                3815: Testbench: Sending packet from 2 to 1, Data = f3091ae6
+                3825: Testbench: Sending packet from 1 to 2, Data = 14cfc129
+Sending packet @ 3825 [sa=1] [da=2] data=14cfc129
+                3825: Testbench: Sending packet from 3 to 0, Data = ed536cda
+Sending packet @ 3825 [sa=3] [da=0] data=ed536cda
+                3845: Testbench: Sending packet from 4 to 5, Data = da8ae2b5
+Sending packet @ 3845 [sa=4] [da=5] data=da8ae2b5
+                3855: FIFO Read: Data = ebfec0d7, Read Ptr =  6, Count =  1
+                3865: Switch Routing: From Input           7 to Address 6, Data = 42d92f85, Latched Data = ebfec0d7, Valido_n = 1
+                3865: -- PORTIN COMPLETE -- Portin: Address = 4, Payload = 39961773, Valid = 0
+                3875: FIFO Write: Data = 39961773, Write Ptr =  6, Count =  3
+                3885: Portout: Din = 42d92f85
+                3925: FIFO Read: Data = 75c50deb, Read Ptr =  4, Count =  3
+                3935: Switch Routing: From Input           0 to Address 3, Data = 31230762, Latched Data = 75c50deb, Valido_n = 1
+                3945: Portout: Serialization of 75c50deb completed.
+Sending packet @ 3955 [sa=2] [da=1] data=f3091ae6
+                3955: Testbench: Sending packet from 5 to 4, Data = 3cf11979
+                3955: Portout: Din = 31230762
+                3955: -- PORTIN COMPLETE -- Portin: Address = 7, Payload = 9799a82f, Valid = 0
+Received 75c50deb @ 3965 and match found  
+                3965: Portout: Serialization of 06b97b0d completed.
+                3965: Portout: Serialization of bb825a77 completed.
+                3965: FIFO Write: Data = 9799a82f, Write Ptr =  7, Count =  6
+Received 06b97b0d @ 3985 and match found  
+Received bb825a77 @ 3985 and match found  
+                4035: Portout: Serialization of 4b212f96 completed.
+                4045: Testbench: Sending packet from 6 to 7, Data = e8740cd0
+Received 4b212f96 @ 4055 and match found  
+                4085: FIFO Read: Data = bb825a77, Read Ptr =  6, Count =  1
+                4095: Switch Routing: From Input           1 to Address 2, Data = 7d3599fa, Latched Data = bb825a77, Valido_n = 1
+                4105: FIFO Read: Data = 4b212f96, Read Ptr =  6, Count =  1
+Sending packet @ 4115 [sa=5] [da=4] data=3cf11979
+                4115: Switch Routing: From Input           4 to Address 5, Data = 2dda595b, Latched Data = 4b212f96, Valido_n = 1
+                4115: Portout: Din = 7d3599fa
+                4135: Portout: Din = 2dda595b
+                4135: -- PORTIN COMPLETE -- Portin: Address = 6, Payload = afd8565f, Valid = 0
+                4145: FIFO Write: Data = afd8565f, Write Ptr =  7, Count =  0
+                4165: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 7bf8fdf7, Valid = 0
+                4175: FIFO Write: Data = 7bf8fdf7, Write Ptr =  7, Count =  2
+                4205: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 14cfc129, Valid = 0
+                4205: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = ed536cda, Valid = 0
+                4205: Portout: Serialization of 42d92f85 completed.
+                4215: FIFO Write: Data = 14cfc129, Write Ptr =  7, Count =  0
+                4215: FIFO Write: Data = ed536cda, Write Ptr =  7, Count =  2
+Sending packet @ 4225 [sa=6] [da=7] data=e8740cd0
+                4225: Testbench: Sending packet from 7 to 6, Data = 55f6adab
+Received 42d92f85 @ 4225 and match found  
+                4225: -- PORTIN COMPLETE -- Portin: Address = 5, Payload = da8ae2b5, Valid = 0
+                4235: FIFO Write: Data = da8ae2b5, Write Ptr =  7, Count =  0
+                4255: Testbench: Sending packet from 0 to 3, Data = 6e5daddc
+Sending packet @ 4255 [sa=0] [da=3] data=6e5daddc
+                4255: FIFO Read: Data = 31230762, Read Ptr =  5, Count =  3
+                4265: Switch Routing: From Input           0 to Address 3, Data = e12ccec2, Latched Data = 31230762, Valido_n = 1
+                4275: Portout: Serialization of 31230762 completed.
+                4285: Portout: Din = e12ccec2
+                4295: Testbench: Sending packet from 3 to 0, Data = fedf72fd
+Sending packet @ 4295 [sa=3] [da=0] data=fedf72fd
+                4295: Testbench: Sending packet from 1 to 2, Data = 2b0eed56
+Received 31230762 @ 4295 and match found  
+                4315: Testbench: Sending packet from 4 to 5, Data = b3d97667
+Sending packet @ 4315 [sa=4] [da=5] data=b3d97667
+                4335: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = f3091ae6, Valid = 0
+                4345: FIFO Write: Data = f3091ae6, Write Ptr =  7, Count =  6
+Sending packet @ 4355 [sa=1] [da=2] data=2b0eed56
+Sending packet @ 4365 [sa=7] [da=6] data=55f6adab
+                4425: Testbench: Sending packet from 2 to 1, Data = 5b6fb9b6
+Sending packet @ 4425 [sa=2] [da=1] data=5b6fb9b6
+                4435: Portout: Serialization of 7d3599fa completed.
+Received 7d3599fa @ 4455 and match found  
+                4455: Portout: Serialization of 2dda595b completed.
+Received 2dda595b @ 4475 and match found  
+                4485: FIFO Read: Data = 42d92f85, Read Ptr =  7, Count =  1
+                4495: Switch Routing: From Input           7 to Address 6, Data = afd8565f, Latched Data = 42d92f85, Valido_n = 1
+                4495: -- PORTIN COMPLETE -- Portin: Address = 4, Payload = 3cf11979, Valid = 0
+                4505: FIFO Write: Data = 3cf11979, Write Ptr =  7, Count =  4
+                4515: Portout: Din = afd8565f
+                4555: FIFO Read: Data = 7d3599fa, Read Ptr =  7, Count =  1
+                4565: Switch Routing: From Input           1 to Address 2, Data = 14cfc129, Latched Data = 7d3599fa, Valido_n = 1
+                4575: FIFO Read: Data = 2dda595b, Read Ptr =  7, Count =  1
+                4585: Testbench: Sending packet from 5 to 4, Data = 3cd18779
+Sending packet @ 4585 [sa=5] [da=4] data=3cd18779
+                4585: Switch Routing: From Input           4 to Address 5, Data = da8ae2b5, Latched Data = 2dda595b, Valido_n = 1
+                4585: FIFO Read: Data = e12ccec2, Read Ptr =  6, Count =  2
+                4585: FIFO Read: Data = 06b97b0d, Read Ptr =  1, Count =  7
+                4585: Portout: Din = 14cfc129
+                4595: Switch Routing: From Input           0 to Address 3, Data = 2c156358, Latched Data = e12ccec2, Valido_n = 1
+                4595: Switch Routing: From Input           2 to Address 1, Data = b1ef6263, Latched Data = 06b97b0d, Valido_n = 1
+                4605: Portout: Serialization of e12ccec2 completed.
+                4605: FIFO Read: Data = 81174a02, Read Ptr =  3, Count =  5
+                4605: Portout: Din = da8ae2b5
+                4605: -- PORTIN COMPLETE -- Portin: Address = 7, Payload = e8740cd0, Valid = 0
+                4615: Switch Routing: From Input           5 to Address 4, Data = 634bf9c6, Latched Data = 81174a02, Valido_n = 1
+                4615: Portout: Din = b1ef6263
+                4615: Portout: Din = 2c156358
+                4615: FIFO Write: Data = e8740cd0, Write Ptr =  8, Count =  7
+Received e12ccec2 @ 4625 and match found  
+                4635: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 6e5daddc, Valid = 0
+                4635: Portout: Din = 634bf9c6
+                4645: FIFO Write: Data = 6e5daddc, Write Ptr =  8, Count =  1
+                4675: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = fedf72fd, Valid = 0
+                4685: FIFO Write: Data = fedf72fd, Write Ptr =  8, Count =  3
+                4695: Testbench: Sending packet from 6 to 7, Data = 4a74bf94
+                4695: -- PORTIN COMPLETE -- Portin: Address = 5, Payload = b3d97667, Valid = 0
+                4705: FIFO Write: Data = b3d97667, Write Ptr =  8, Count =  0
+                4725: Testbench: Sending packet from 0 to 3, Data = 823f2c04
+Sending packet @ 4725 [sa=0] [da=3] data=823f2c04
+                4735: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = 2b0eed56, Valid = 0
+                4745: FIFO Write: Data = 2b0eed56, Write Ptr =  8, Count =  0
+                4745: -- PORTIN COMPLETE -- Portin: Address = 6, Payload = 55f6adab, Valid = 0
+                4755: FIFO Write: Data = 55f6adab, Write Ptr =  8, Count =  0
+                4765: Testbench: Sending packet from 3 to 0, Data = 6dcb69db
+Sending packet @ 4765 [sa=3] [da=0] data=6dcb69db
+                4785: Testbench: Sending packet from 4 to 5, Data = 6cb0b7d9
+Sending packet @ 4785 [sa=4] [da=5] data=6cb0b7d9
+Sending packet @ 4805 [sa=6] [da=7] data=4a74bf94
+                4805: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = 5b6fb9b6, Valid = 0
+                4815: FIFO Write: Data = 5b6fb9b6, Write Ptr =  8, Count =  6
+                4825: Testbench: Sending packet from 1 to 2, Data = bb45e276
+                4835: Testbench: Sending packet from 7 to 6, Data = 5b172db6
+                4835: Portout: Serialization of afd8565f completed.
+Received afd8565f @ 4855 and match found  
+                4895: Testbench: Sending packet from 2 to 1, Data = a3071a46
+                4905: Portout: Serialization of 14cfc129 completed.
+                4915: FIFO Read: Data = 2c156358, Read Ptr =  7, Count =  2
+                4915: FIFO Read: Data = b1ef6263, Read Ptr =  2, Count =  7
+Sending packet @ 4925 [sa=1] [da=2] data=bb45e276
+Received 14cfc129 @ 4925 and match found  
+                4925: Switch Routing: From Input           0 to Address 3, Data = 7bf8fdf7, Latched Data = 2c156358, Valido_n = 1
+                4925: Switch Routing: From Input           2 to Address 1, Data = 11844923, Latched Data = b1ef6263, Valido_n = 1
+                4925: Portout: Serialization of da8ae2b5 completed.
+                4935: Portout: Serialization of b1ef6263 completed.
+                4935: Portout: Serialization of 2c156358 completed.
+                4935: FIFO Read: Data = 634bf9c6, Read Ptr =  4, Count =  4
+Received da8ae2b5 @ 4945 and match found  
+                4945: Switch Routing: From Input           5 to Address 4, Data = 4fa1559f, Latched Data = 634bf9c6, Valido_n = 1
+                4945: Portout: Din = 11844923
+                4945: Portout: Din = 7bf8fdf7
+Received b1ef6263 @ 4955 and match found  
+Received 2c156358 @ 4955 and match found  
+                4955: Portout: Serialization of 634bf9c6 completed.
+Sending packet @ 4965 [sa=7] [da=6] data=5b172db6
+                4965: Portout: Din = 4fa1559f
+                4965: -- PORTIN COMPLETE -- Portin: Address = 4, Payload = 3cd18779, Valid = 0
+Received 634bf9c6 @ 4975 and match found  
+                4975: FIFO Write: Data = 3cd18779, Write Ptr =  8, Count =  3
+Sending packet @ 5015 [sa=2] [da=1] data=a3071a46
+                5055: Testbench: Sending packet from 5 to 4, Data = 7bd261f7
+Sending packet @ 5065 [sa=5] [da=4] data=7bd261f7
+                5095: FIFO Read: Data = afd8565f, Read Ptr =  8, Count =  1
+                5105: Switch Routing: From Input           7 to Address 6, Data = 55f6adab, Latched Data = afd8565f, Valido_n = 1
+                5105: -- PORTIN COMPLETE -- Portin: Address = 3, Payload = 823f2c04, Valid = 0
+                5115: FIFO Write: Data = 823f2c04, Write Ptr =  9, Count =  1
+                5125: Portout: Din = 55f6adab
+                5145: -- PORTIN COMPLETE -- Portin: Address = 0, Payload = 6dcb69db, Valid = 0
+                5155: FIFO Write: Data = 6dcb69db, Write Ptr =  9, Count =  4
+                5165: -- PORTIN COMPLETE -- Portin: Address = 5, Payload = 6cb0b7d9, Valid = 0
+                5175: FIFO Write: Data = 6cb0b7d9, Write Ptr =  9, Count =  1
+                5185: -- PORTIN COMPLETE -- Portin: Address = 7, Payload = 4a74bf94, Valid = 0
+                5195: FIFO Write: Data = 4a74bf94, Write Ptr =  9, Count =  8
+                5245: FIFO Read: Data = 7bf8fdf7, Read Ptr =  8, Count =  2
+                5245: FIFO Read: Data = 11844923, Read Ptr =  3, Count =  6
+                5255: Switch Routing: From Input           0 to Address 3, Data = 6e5daddc, Latched Data = 7bf8fdf7, Valido_n = 1
+                5255: Switch Routing: From Input           2 to Address 1, Data = 85d79a0b, Latched Data = 11844923, Valido_n = 1
+                5265: Portout: Serialization of 11844923 completed.
+                5265: Portout: Serialization of 7bf8fdf7 completed.
+                5265: FIFO Read: Data = 4fa1559f, Read Ptr =  5, Count =  4
+                5275: Switch Routing: From Input           5 to Address 4, Data = 36e5816d, Latched Data = 4fa1559f, Valido_n = 1
+                5275: Portout: Din = 85d79a0b
+                5275: Portout: Din = 6e5daddc
+Received 11844923 @ 5285 and match found  
+Received 7bf8fdf7 @ 5285 and match found  
+                5285: Portout: Serialization of 4fa1559f completed.
+                5295: Portout: Din = 36e5816d
+Received 4fa1559f @ 5305 and match found  
+                5305: -- PORTIN COMPLETE -- Portin: Address = 2, Payload = bb45e276, Valid = 0
+                5315: FIFO Write: Data = bb45e276, Write Ptr =  9, Count =  1
+                5345: -- PORTIN COMPLETE -- Portin: Address = 6, Payload = 5b172db6, Valid = 0
+                5355: FIFO Write: Data = 5b172db6, Write Ptr =  9, Count =  0
+                5395: -- PORTIN COMPLETE -- Portin: Address = 1, Payload = a3071a46, Valid = 0
+                5405: FIFO Write: Data = a3071a46, Write Ptr =  9, Count =  5
+                5445: -- PORTIN COMPLETE -- Portin: Address = 4, Payload = 7bd261f7, Valid = 0
+                5445: Portout: Serialization of 55f6adab completed.
+                5455: FIFO Write: Data = 7bd261f7, Write Ptr =  9, Count =  3
+Received 55f6adab @ 5465 and match found  
+                5575: FIFO Read: Data = 6e5daddc, Read Ptr =  9, Count =  1
+                5575: FIFO Read: Data = 85d79a0b, Read Ptr =  4, Count =  6
+                5585: Switch Routing: From Input           0 to Address 3, Data = 823f2c04, Latched Data = 6e5daddc, Valido_n = 1
+                5585: Switch Routing: From Input           2 to Address 1, Data = cfc4569f, Latched Data = 85d79a0b, Valido_n = 1
+                5595: Portout: Serialization of 85d79a0b completed.
+                5595: Portout: Serialization of 6e5daddc completed.
+                5595: FIFO Read: Data = 36e5816d, Read Ptr =  6, Count =  4
+                5605: Switch Routing: From Input           5 to Address 4, Data = 39961773, Latched Data = 36e5816d, Valido_n = 1
+                5605: Portout: Din = cfc4569f
+                5605: Portout: Din = 823f2c04
+Received 85d79a0b @ 5615 and match found  
+Received 6e5daddc @ 5615 and match found  
+                5615: Portout: Serialization of 36e5816d completed.
+                5625: Portout: Din = 39961773
+Received 36e5816d @ 5635 and match found  
+                5695: FIFO Read: Data = 55f6adab, Read Ptr =  9, Count =  1
+                5705: Switch Routing: From Input           7 to Address 6, Data = 5b172db6, Latched Data = 55f6adab, Valido_n = 1
+                5725: Portout: Din = 5b172db6
+                5905: FIFO Read: Data = cfc4569f, Read Ptr =  5, Count =  5
+                5915: Switch Routing: From Input           2 to Address 1, Data = 090cdb12, Latched Data = cfc4569f, Valido_n = 1
+                5925: Portout: Serialization of cfc4569f completed.
+                5925: Portout: Serialization of 823f2c04 completed.
+                5925: FIFO Read: Data = 39961773, Read Ptr =  7, Count =  3
+                5935: Switch Routing: From Input           5 to Address 4, Data = 3cf11979, Latched Data = 39961773, Valido_n = 1
+                5935: Portout: Din = 090cdb12
+Received cfc4569f @ 5945 and match found  
+Received 823f2c04 @ 5945 and match found  
+                5945: Portout: Serialization of 39961773 completed.
+                5955: Portout: Din = 3cf11979
+Received 39961773 @ 5965 and match found  
+                6045: Portout: Serialization of 5b172db6 completed.
+Received 5b172db6 @ 6065 and match found  
+                6075: FIFO Read: Data = bf23327e, Read Ptr =  5, Count =  5
+                6085: Switch Routing: From Input           3 to Address 0, Data = adcbc05b, Latched Data = bf23327e, Valido_n = 1
+                6105: Portout: Din = adcbc05b
+                6235: FIFO Read: Data = 090cdb12, Read Ptr =  6, Count =  4
+                6245: Switch Routing: From Input           2 to Address 1, Data = c71a0c8e, Latched Data = 090cdb12, Valido_n = 1
+                6255: Portout: Serialization of 090cdb12 completed.
+                6255: FIFO Read: Data = 3cf11979, Read Ptr =  8, Count =  2
+                6265: Switch Routing: From Input           5 to Address 4, Data = 3cd18779, Latched Data = 3cf11979, Valido_n = 1
+                6265: Portout: Din = c71a0c8e
+Received 090cdb12 @ 6275 and match found  
+                6275: Portout: Serialization of 3cf11979 completed.
+                6285: Portout: Din = 3cd18779
+Received 3cf11979 @ 6295 and match found  
+                6405: FIFO Read: Data = adcbc05b, Read Ptr =  6, Count =  4
+                6415: Switch Routing: From Input           3 to Address 0, Data = 9ff2ae3f, Latched Data = adcbc05b, Valido_n = 1
+                6425: Portout: Serialization of adcbc05b completed.
+                6435: Portout: Din = 9ff2ae3f
+Received adcbc05b @ 6445 and match found  
+                6455: FIFO Read: Data = 76d457ed, Read Ptr =  1, Count =  9
+                6465: Switch Routing: From Input           6 to Address 7, Data = 2e58495c, Latched Data = 76d457ed, Valido_n = 1
+                6485: Portout: Din = 2e58495c
+                6565: FIFO Read: Data = c71a0c8e, Read Ptr =  7, Count =  3
+                6575: Switch Routing: From Input           2 to Address 1, Data = f3091ae6, Latched Data = c71a0c8e, Valido_n = 1
+                6585: Portout: Serialization of c71a0c8e completed.
+                6585: FIFO Read: Data = 3cd18779, Read Ptr =  9, Count =  1
+                6595: Switch Routing: From Input           5 to Address 4, Data = 7bd261f7, Latched Data = 3cd18779, Valido_n = 1
+                6595: Portout: Din = f3091ae6
+Received c71a0c8e @ 6605 and match found  
+                6605: Portout: Serialization of 3cd18779 completed.
+                6615: Portout: Din = 7bd261f7
+Received 3cd18779 @ 6625 and match found  
+                6735: FIFO Read: Data = 9ff2ae3f, Read Ptr =  7, Count =  3
+                6745: Switch Routing: From Input           3 to Address 0, Data = ed536cda, Latched Data = 9ff2ae3f, Valido_n = 1
+                6755: Portout: Serialization of 9ff2ae3f completed.
+                6765: Portout: Din = ed536cda
+Received 9ff2ae3f @ 6775 and match found  
+                6785: FIFO Read: Data = 2e58495c, Read Ptr =  2, Count =  8
+                6795: Switch Routing: From Input           6 to Address 7, Data = 359fdd6b, Latched Data = 2e58495c, Valido_n = 1
+                6805: Portout: Serialization of 2e58495c completed.
+                6815: Portout: Din = 359fdd6b
+Received 2e58495c @ 6825 and match found  
+                6895: FIFO Read: Data = f3091ae6, Read Ptr =  8, Count =  2
+                6905: Switch Routing: From Input           2 to Address 1, Data = 5b6fb9b6, Latched Data = f3091ae6, Valido_n = 1
+                6915: Portout: Serialization of f3091ae6 completed.
+                6925: Portout: Din = 5b6fb9b6
+Received f3091ae6 @ 6935 and match found  
+                6935: Portout: Serialization of 7bd261f7 completed.
+Received 7bd261f7 @ 6955 and match found  
+                6965: FIFO Read: Data = da8ae2b5, Read Ptr =  8, Count =  2
+                6975: Switch Routing: From Input           4 to Address 5, Data = b3d97667, Latched Data = da8ae2b5, Valido_n = 1
+                6995: Portout: Din = b3d97667
+                7065: FIFO Read: Data = ed536cda, Read Ptr =  8, Count =  2
+                7075: Switch Routing: From Input           3 to Address 0, Data = fedf72fd, Latched Data = ed536cda, Valido_n = 1
+                7085: Portout: Serialization of ed536cda completed.
+                7095: Portout: Din = fedf72fd
+Received ed536cda @ 7105 and match found  
+                7115: FIFO Read: Data = 359fdd6b, Read Ptr =  3, Count =  7
+                7125: Switch Routing: From Input           6 to Address 7, Data = 3c20f378, Latched Data = 359fdd6b, Valido_n = 1
+                7135: Portout: Serialization of 359fdd6b completed.
+                7145: Portout: Din = 3c20f378
+Received 359fdd6b @ 7155 and match found  
+                7225: FIFO Read: Data = 5b6fb9b6, Read Ptr =  9, Count =  1
+                7235: Switch Routing: From Input           2 to Address 1, Data = a3071a46, Latched Data = 5b6fb9b6, Valido_n = 1
+                7245: Portout: Serialization of 5b6fb9b6 completed.
+                7255: Portout: Din = a3071a46
+Received 5b6fb9b6 @ 7265 and match found  
+                7295: FIFO Read: Data = b3d97667, Read Ptr =  9, Count =  1
+                7305: Switch Routing: From Input           4 to Address 5, Data = 6cb0b7d9, Latched Data = b3d97667, Valido_n = 1
+                7315: Portout: Serialization of b3d97667 completed.
+                7325: Portout: Din = 6cb0b7d9
+Received b3d97667 @ 7335 and match found  
+                7395: FIFO Read: Data = fedf72fd, Read Ptr =  9, Count =  1
+                7405: Switch Routing: From Input           3 to Address 0, Data = 6dcb69db, Latched Data = fedf72fd, Valido_n = 1
+                7415: Portout: Serialization of fedf72fd completed.
+                7425: Portout: Din = 6dcb69db
+Received fedf72fd @ 7435 and match found  
+                7445: FIFO Read: Data = 3c20f378, Read Ptr =  4, Count =  6
+                7455: Switch Routing: From Input           6 to Address 7, Data = 78d99bf1, Latched Data = 3c20f378, Valido_n = 1
+                7465: Portout: Serialization of 3c20f378 completed.
+                7475: Portout: Din = 78d99bf1
+Received 3c20f378 @ 7485 and match found  
+                7575: Portout: Serialization of a3071a46 completed.
+Received a3071a46 @ 7595 and match found  
+                7645: FIFO Read: Data = 14cfc129, Read Ptr =  8, Count =  2
+                7645: Portout: Serialization of 6cb0b7d9 completed.
+                7655: Switch Routing: From Input           1 to Address 2, Data = 2b0eed56, Latched Data = 14cfc129, Valido_n = 1
+Received 6cb0b7d9 @ 7665 and match found  
+                7675: Portout: Din = 2b0eed56
+                7745: Portout: Serialization of 6dcb69db completed.
+Received 6dcb69db @ 7765 and match found  
+                7775: FIFO Read: Data = 78d99bf1, Read Ptr =  5, Count =  5
+                7785: Switch Routing: From Input           6 to Address 7, Data = a4ae3249, Latched Data = 78d99bf1, Valido_n = 1
+                7795: Portout: Serialization of 78d99bf1 completed.
+                7805: Portout: Din = a4ae3249
+Received 78d99bf1 @ 7815 and match found  
+                7975: FIFO Read: Data = 2b0eed56, Read Ptr =  9, Count =  1
+                7985: Switch Routing: From Input           1 to Address 2, Data = bb45e276, Latched Data = 2b0eed56, Valido_n = 1
+                7995: Portout: Serialization of 2b0eed56 completed.
+                8005: Portout: Din = bb45e276
+Received 2b0eed56 @ 8015 and match found  
+                8105: FIFO Read: Data = a4ae3249, Read Ptr =  6, Count =  4
+                8115: Switch Routing: From Input           6 to Address 7, Data = 0fd28f1f, Latched Data = a4ae3249, Valido_n = 1
+                8125: Portout: Serialization of a4ae3249 completed.
+                8135: Portout: Din = 0fd28f1f
+Received a4ae3249 @ 8145 and match found  
+                8325: Portout: Serialization of bb45e276 completed.
+Received bb45e276 @ 8345 and match found  
+                8435: FIFO Read: Data = 0fd28f1f, Read Ptr =  7, Count =  3
+                8445: Switch Routing: From Input           6 to Address 7, Data = 9799a82f, Latched Data = 0fd28f1f, Valido_n = 1
+                8455: Portout: Serialization of 0fd28f1f completed.
+                8465: Portout: Din = 9799a82f
+Received 0fd28f1f @ 8475 and match found  
+                8765: FIFO Read: Data = 9799a82f, Read Ptr =  8, Count =  2
+                8775: Switch Routing: From Input           6 to Address 7, Data = e8740cd0, Latched Data = 9799a82f, Valido_n = 1
+                8785: Portout: Serialization of 9799a82f completed.
+                8795: Portout: Din = e8740cd0
+Received 9799a82f @ 8805 and match found  
+                9095: FIFO Read: Data = e8740cd0, Read Ptr =  9, Count =  1
+                9105: Switch Routing: From Input           6 to Address 7, Data = 4a74bf94, Latched Data = e8740cd0, Valido_n = 1
+                9115: Portout: Serialization of e8740cd0 completed.
+                9125: Portout: Din = 4a74bf94
+Received e8740cd0 @ 9135 and match found  
+                9445: Portout: Serialization of 4a74bf94 completed.
+Received 4a74bf94 @ 9465 and match found  
+$finish called from file "testbench.sv", line 123.
+
+*******************End of Simulation Report*******************
+
+Number of Errors =           0
+Number of unmatched packets =           0
+Port  0 [transmitted= 10] [received= 10] [expected= 10]
+Port  1 [transmitted= 10] [received= 10] [expected= 10]
+Port  2 [transmitted= 10] [received= 10] [expected= 10]
+Port  3 [transmitted= 10] [received= 10] [expected= 10]
+Port  4 [transmitted= 10] [received= 10] [expected= 10]
+Port  5 [transmitted= 10] [received= 10] [expected= 10]
+Port  6 [transmitted= 10] [received= 10] [expected= 10]
+Port  7 [transmitted= 10] [received= 10] [expected= 10]
+$finish at simulation time                15535
+
