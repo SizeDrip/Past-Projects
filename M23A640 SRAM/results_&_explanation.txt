@@ -1,0 +1,84 @@
+Here's the simulation output for part 3:
+Beginning write-read test
+dreg = xx, @                    5
+performing read from 0001, data is 01
+dreg = 01, @                 3965
+performing read from 0002, data is 12
+dreg = 12, @                 4295
+performing read from 0003, data is 23
+dreg = 23, @                 4625
+performing read from 0004, data is 34
+dreg = 34, @                 4955
+performing read from 0005, data is 45
+dreg = 45, @                 5285
+performing read from 1001, data is 56
+dreg = 56, @                 5615
+performing read from 1002, data is 67
+dreg = 67, @                 5945
+performing read from 1003, data is 78
+dreg = 78, @                 6275
+performing read from 1004, data is 89
+dreg = 89, @                 6605
+performing read from 1005, data is 9a
+Passed write-read test
+Beginning write-read test 2
+dreg = 9a, @                 6935
+performing read from 0001, data is 01
+dreg = 01, @                 8915
+performing read from 0002, data is 12
+dreg = 12, @                 9245
+performing read from 0003, data is 23
+dreg = 23, @                 9575
+performing read from 0004, data is 34
+dreg = 34, @                 9905
+performing read from 0005, data is 45
+dreg = 45, @                10235
+performing read from 0001, data is 10
+dreg = 10, @                11555
+performing read from 0002, data is 21
+dreg = 21, @                11885
+performing read from 0003, data is 32
+dreg = 32, @                12215
+performing read from 0004, data is 34
+dreg = 34, @                12545
+performing read from 0005, data is 45
+Passed write-read test 2
+Beginning broken write test
+dreg = 45, @                12875
+performing read from 0001, data is 01
+dreg = 01, @                13865
+performing read from 0002, data is 12
+dreg = 12, @                14195
+performing read from 0001, data is 34
+dreg = 34, @                15515
+performing read from 0002, data is 12
+dreg = 12, @                15845
+performing read from 0003, data is 78
+Passed broken write test
+Beginning alias test
+dreg = 78, @                16175
+performing read from 0001, data is 01
+dreg = 01, @                17165
+performing read from 0002, data is 12
+dreg = 12, @                17495
+performing read from 8001, data is 01
+dreg = 01, @                17825
+performing read from 8002, data is 12
+dreg = 12, @                18155
+performing read from 4002, data is zz
+dreg = zz, @                18485
+performing read from 0001, data is 34
+dreg = 34, @                19475
+performing read from 0002, data is 56
+dreg = 56, @                19805
+performing read from 8001, data is 34
+dreg = 34, @                20135
+performing read from 8002, data is 56
+dreg = 56, @                20465
+performing read from 4002, data is zz
+Passed alias test
+dreg = zz, @                20795
+***** - ALL TESTS PASSED - *****
+
+
+This design is fully synthesizable due to the absense of any initial blocks, delays, or immediate value declarations (i.e. reg [7:0] test = 0 at initial declaration). A reset state is in place to properly initialize all relevant values. All relevant protocols of the M23A640 datasheet are followed.
