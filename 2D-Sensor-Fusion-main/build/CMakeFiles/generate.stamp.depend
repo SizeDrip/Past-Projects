@@ -1,0 +1,34 @@
+# CMake generation dependency list for this directory.
+C:/Program Files (x86)/opencv/install/x64/vc17/lib/OpenCVConfig-version.cmake
+C:/Program Files (x86)/opencv/install/x64/vc17/lib/OpenCVConfig.cmake
+C:/Program Files (x86)/opencv/install/x64/vc17/lib/OpenCVModules-release.cmake
+C:/Program Files (x86)/opencv/install/x64/vc17/lib/OpenCVModules.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeCUDAInformation.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeCXXInformation.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/NVIDIA-CUDA.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/Compiler/NVIDIA.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/FindCUDA.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/FindCUDA/select_compute_arch.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows-Initialize.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows-MSVC-CXX.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows-MSVC.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows-NVIDIA-CUDA.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.29/Modules/Platform/WindowsPaths.cmake
+C:/Users/coope/Desktop/2D-Sensor-Fusion-main/CMakeLists.txt
+C:/Users/coope/Desktop/2D-Sensor-Fusion-main/build/CMakeFiles/3.29.0-rc1/CMakeCUDACompiler.cmake
+C:/Users/coope/Desktop/2D-Sensor-Fusion-main/build/CMakeFiles/3.29.0-rc1/CMakeCXXCompiler.cmake
+C:/Users/coope/Desktop/2D-Sensor-Fusion-main/build/CMakeFiles/3.29.0-rc1/CMakeRCCompiler.cmake
+C:/Users/coope/Desktop/2D-Sensor-Fusion-main/build/CMakeFiles/3.29.0-rc1/CMakeSystem.cmake

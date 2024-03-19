@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\coope\Desktop\2D-Sensor-Fusion-main\build\CMakeFiles\f0f507b01403bab368ab91fc2d33c6c3\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{4EACB5A3-E9EA-310F-B9B3-FE5A51AED144}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

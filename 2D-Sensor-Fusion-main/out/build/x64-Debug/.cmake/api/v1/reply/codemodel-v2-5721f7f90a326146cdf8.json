@@ -1,0 +1,65 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "camera_fusion",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "project_lidar_to_camera::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-project_lidar_to_camera-Debug-4ee80a577c83a6b8bb41.json",
+					"name" : "project_lidar_to_camera",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "show_lidar_top_view::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-show_lidar_top_view-Debug-9a376130f5cd23992588.json",
+					"name" : "show_lidar_top_view",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/coope/Desktop/2D-Sensor-Fusion-main/out/build/x64-Debug",
+		"source" : "C:/Users/coope/Desktop/2D-Sensor-Fusion-main"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
