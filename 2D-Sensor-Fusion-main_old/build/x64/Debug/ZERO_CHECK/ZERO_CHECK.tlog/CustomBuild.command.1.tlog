@@ -1,0 +1,10 @@
+^C:\USERS\COOPE\DESKTOP\2D-SENSOR-FUSION-MAIN_OLD\BUILD\CMAKEFILES\14CBE1BC682C85AB6C48A36C800B24C1\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/coope/Desktop/2D-Sensor-Fusion-main_old -BC:/Users/coope/Desktop/2D-Sensor-Fusion-main_old/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/coope/Desktop/2D-Sensor-Fusion-main_old/build/camera_fusion.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

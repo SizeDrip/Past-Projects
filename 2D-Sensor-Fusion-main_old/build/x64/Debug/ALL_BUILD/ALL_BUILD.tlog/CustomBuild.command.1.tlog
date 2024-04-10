@@ -1,0 +1,10 @@
+^C:\USERS\COOPE\DESKTOP\2D-SENSOR-FUSION-MAIN_OLD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/coope/Desktop/2D-Sensor-Fusion-main_old -BC:/Users/coope/Desktop/2D-Sensor-Fusion-main_old/build --check-stamp-file C:/Users/coope/Desktop/2D-Sensor-Fusion-main_old/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
