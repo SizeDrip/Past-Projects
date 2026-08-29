@@ -8,7 +8,7 @@ Current professional spacecraft software is proprietary and is not included here
 
 ### [CUDA Camera–LiDAR–GPS Sensor Fusion](./2D-Sensor-Fusion-main/)
 
-Adapted an existing CPU C++/OpenCV sensor-fusion baseline into a CUDA C++ video pipeline. I wrote a custom kernel to project 3D LiDAR points into camera coordinates, added frame-aligned GPS overlays, and achieved approximately **2.5× end-to-end throughput** over the CPU baseline. I used Nsight Compute and stage-level timing to investigate PCIe transfers, memory use, workload size, and data-ingest overhead, then removed a major binary-to-text conversion bottleneck.
+Adapted an existing CPU C++/OpenCV sensor-fusion baseline into a CUDA C++ video pipeline. Wrote a custom kernel to project 3D LiDAR points into camera coordinates, added frame-aligned GPS overlays, and achieved approximately **2.5× end-to-end throughput** over the CPU baseline. Used Nsight Compute and stage-level timing to investigate PCIe transfers, memory use, workload size, and data-ingest overhead, then removed a major binary-to-text conversion bottleneck.
 
 **Technologies:** C++, CUDA, OpenCV, Nsight Compute, CMake, KITTI data
 
