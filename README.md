@@ -38,4 +38,4 @@ A team-built arcade platform with interchangeable physical controls for players 
 
 ## Repository Notes
 
-This repository is a historical project archive rather than a single production codebase. Some directories preserve course reports and implementation snapshots alongside source code. The most relevant projects have focused READMEs describing the problem, my contribution, results, limitations, and possible next steps.
+This repository is a historical project archive rather than a single production codebase. Some directories preserve course reports and implementation snapshots alongside source code. The most relevant projects have focused READMEs describing the problem, relevant contributions, results, limitations, etc.
