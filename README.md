@@ -24,6 +24,12 @@ Designed a compact STM32 bootloader prototype that receives firmware-update data
 
 **Technologies:** C, STM32 HAL, ARM, UART, flash programming, embedded firmware
 
+### [Technical Interview Preparation System (TIPS)](./TIPS/)
+
+A three-person graduate-course project that uses a LangGraph/LangChain agent pipeline, retrieval-augmented generation, Hugging Face embeddings, ChromaDB, web research, and PDF export to generate role-specific interview-preparation material. The surviving materials do not preserve a reliable per-person task breakdown, so the repository presents this as a shared team deliverable by Emma Berry, Luca Chierotti, and Christina Wong.
+
+**Technologies:** Python, PyTorch environment, LangGraph, LangChain, Hugging Face embeddings, ChromaDB, OpenAI API, Tavily, ReportLab
+
 ### [8×8 Packet Switch](./8x8_Router/) and [SPI SRAM Controller](./M23A640%20SRAM/)
 
 RTL projects covering packet routing, FIFOs, switch-fabric behavior, external-memory control, simulation, synthesis, and gate-level verification.
