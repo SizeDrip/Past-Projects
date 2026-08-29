@@ -19,22 +19,22 @@ The CUDA version achieved approximately **2.5× end-to-end throughput** over the
 
 The largest lesson was that overall speed was not determined by kernel execution alone. Profiling and timing highlighted several system-level constraints:
 
-- repeated CPU↔GPU transfers over PCIe;
-- allocation and transfer work performed per frame;
-- limited workload size relative to GPU launch/transfer overhead;
-- data-ingest cost outside the CUDA kernel;
-- additional opportunities to improve memory reuse and overlap transfers with execution.
+- repeated CPU↔GPU transfers over PCIe
+- allocation and transfer work performed per frame
+- limited workload size relative to GPU launch/transfer overhead
+- data-ingest cost outside the CUDA kernel
+- additional opportunities to improve memory reuse and overlap transfers with execution
 
 Removing the binary-to-text conversion step substantially reduced ingest time. Potential next steps identified in the report include persistent allocations, pinned host memory, CUDA streams/asynchronous transfers, frame batching, and further kernel/thread-block tuning.
 
 ## Pipeline
 
-1. Read a camera frame, LiDAR point cloud, and corresponding GPS record.
-2. Parse the binary point-cloud data directly into C++ structures.
-3. Transfer LiDAR points and calibration matrices to the GPU.
-4. Run `transformLidarPoints` to filter and project 3D points into image coordinates.
-5. Copy projected points back for visualization and overlay GPS data on the output frame.
-6. Repeat across the sequence to produce a video-style visualization.
+1. Read a camera frame, LiDAR point cloud, and corresponding GPS record
+2. Parse the binary point-cloud data directly into C++ structures
+3. Transfer LiDAR points and calibration matrices to the GPU
+4. Run `transformLidarPoints` to filter and project 3D points into image coordinates
+5. Copy projected points back for visualization and overlay GPS data on the output frame
+6. Repeat across the sequence to produce a video-style visualization
 
 ## Key Files
 
@@ -48,7 +48,7 @@ C++ · CUDA · OpenCV · Nsight Compute · CMake · KITTI
 
 ## Reproducing the Project
 
-This directory is preserved as a coursework snapshot, not a turn-key package. The source currently contains machine-specific dataset paths and expects KITTI-format image, point-cloud, GPS, and calibration data. To run it on another machine, update the input paths and ensure compatible versions of CUDA, OpenCV with CUDA support, and CMake are installed.
+To run this on another machine, update the relevant input paths and ensure compatible versions of CUDA, OpenCV with CUDA support, and CMake are installed.
 
 ## Known Limitations
 
