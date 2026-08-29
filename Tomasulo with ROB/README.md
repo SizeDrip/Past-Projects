@@ -4,17 +4,13 @@ An educational processor simulator written in C for a graduate computer-architec
 
 ## Implemented Concepts
 
-- Separate load, store, add, and multiply/divide reservation-station classes.
-- Register-status tracking and operand tags for dependency management.
-- Multiple functional-unit types with configurable execution latencies.
-- Result forwarding to dependent reservation stations.
-- A circular reorder buffer with issue, result update, in-order commit, and flush operations.
-- Speculative branch execution and branch-misprediction recovery.
-- Cycle-by-cycle traces of reservation stations, registers, and ROB state.
-
-## Why This Project Matters
-
-The simulator connects processor-architecture concepts to a concrete implementation: instruction issue, register renaming, dependency tracking, functional-unit scheduling, speculative execution, and precise in-order retirement. It was especially useful for understanding how structures such as reservation stations and a ROB coordinate across cycles.
+- Separate load, store, add, and multiply/divide reservation-station classes
+- Register-status tracking and operand tags for dependency management
+- Multiple functional-unit types with configurable execution latencies
+- Result forwarding to dependent reservation stations
+- A circular reorder buffer with issue, result update, in-order commit, and flush operations
+- Speculative branch execution and branch-misprediction recovery
+- Cycle-by-cycle traces of reservation stations, registers, and ROB state
 
 ## Repository Layout
 
@@ -40,8 +36,4 @@ make clean
 
 ## Scope and Limitations
 
-This is a coursework simulator rather than a cycle-accurate model of a commercial processor. It uses a small fixed instruction set and fixed-size structures, and its branch and memory behavior are simplified for teaching purposes. The source is preserved primarily to demonstrate implementation of the architectural mechanisms above, not as a production simulator.
-
-## Technologies
-
-C · Make · computer architecture · out-of-order execution · speculation · reorder buffers
+This is a coursework simulator rather than a cycle-accurate model of a commercial processor. It uses a small fixed instruction set and fixed-size structures, and its branch and memory behavior are simplified.
