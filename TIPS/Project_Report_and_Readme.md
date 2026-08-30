@@ -2,7 +2,7 @@
 
 **Team:** Emma Berry, Luca Chierotti, and Christina Wong
 
-This Markdown report is adapted from the team's final course report. The surviving materials do not preserve a reliable per-person task breakdown, so the system is documented as a shared team deliverable.
+This Markdown report is adapted from the original final course report.
 
 ## 1. System Overview
 
@@ -11,18 +11,18 @@ TIPS generates interview-preparation material tailored to a specific technical r
 The pipeline is managed by LangGraph. At each stage, a specialized LangChain agent performs one responsibility:
 
 1. **Resume Analysis Agent**
-   - Ingests the resume.
-   - Retrieves and summarizes the candidate's key skills and projects.
+   - Ingests the resume
+   - Retrieves and summarizes the candidate's key skills and projects
 2. **Company Research Agent**
-   - Ingests and cleans the job description.
-   - Retrieves the most relevant technical requirements.
-   - Uses Tavily web search to gather company information.
-   - Produces a structured company profile.
+   - Ingests and cleans the job description
+   - Retrieves the most relevant technical requirements
+   - Uses Tavily web search to gather company information
+   - Produces a structured company profile
 3. **Technical Question Generation Agent**
-   - Combines the resume analysis, job requirements, and company profile.
-   - Generates role-specific technical and behavioral questions, answers, and rationales.
+   - Combines the resume analysis, job requirements, and company profile
+   - Generates role-specific technical and behavioral questions, answers, and rationales
 4. **Report Formatter / Exporter**
-   - Combines the outputs into a styled PDF report.
+   - Combines the outputs into a styled PDF report
 
 ```mermaid
 flowchart TD
@@ -49,11 +49,11 @@ The setup layer ensures that the required libraries, parameters, and credentials
 
 `VectorStoreManager` manages document ingestion and retrieval:
 
-- selects an appropriate loader for PDF, DOCX, or TXT files;
-- splits documents with `RecursiveCharacterTextSplitter`;
-- generates Hugging Face embeddings;
-- stores chunks and metadata in persistent ChromaDB collections; and
-- performs Maximal Marginal Relevance retrieval to return diverse, high-relevance context.
+- selects an appropriate loader for PDF, DOCX, or TXT files
+- splits documents with `RecursiveCharacterTextSplitter`
+- generates Hugging Face embeddings
+- stores chunks and metadata in persistent ChromaDB collections
+- performs Maximal Marginal Relevance retrieval to return diverse, high-relevance context
 
 ### 2.3 Tools
 
@@ -112,17 +112,16 @@ A conventional `argparse` CLI accepts resume, job-description, output-path, and 
 
 The notebook supports both interactive Colab use and a command-line flow. To run it:
 
-1. Create an isolated Python environment.
-2. Install the dependencies listed by the notebook's requirements checker.
-3. Provide OpenAI and Tavily credentials through environment variables or external local key files.
-4. Supply a resume, job description, company query, and output path.
-5. Run the notebook or CLI entry point.
+1. Create an isolated Python environment
+2. Install the dependencies listed by the notebook's requirements checker
+3. Provide OpenAI and Tavily credentials through environment variables or external local key files
+4. Supply a resume, job description, company query, and output path
+5. Run the notebook or CLI entry point
 
 The original report used a private shared-Drive directory structure for input and output files. That private path is not required by the system design and is intentionally not reproduced as a public dependency here.
 
 ## 5. Scope and limitations
 
-- This is a graduate-course prototype, not a maintained production service.
-- It depends on third-party APIs and package versions that may have changed since the project was completed.
-- Generated interview material should be reviewed for factuality and relevance.
-- Because the original division of labor is no longer recoverable, this repository does not attribute individual subsystems to particular team members.
+- This is a graduate-course prototype, not a maintained production service
+- It depends on third-party APIs and package versions that may have changed since the project was completed
+- Generated interview material should be reviewed for factuality and relevance
