@@ -1,0 +1,52 @@
+# IDE and editor state
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# C/C++ build products
+build/
+out/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile.user
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.pdb
+*.ilk
+*.idb
+*.ipch
+
+# Python and notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Local ML/vector-store data
+chroma_data/
+*.sqlite3
+
+# Secrets and local configuration
+.env
+.env.*
+*api_key*.txt
+*API_KEY*.txt
+openai_key.txt
+tavily_key.txt
+
+# OS files
+.DS_Store
+Thumbs.db
