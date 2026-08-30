@@ -16,7 +16,7 @@ TIPS produces a formatted interview-preparation report containing:
 
 ## Architecture
 
-mermaid '''
+```mermaid
 flowchart TD
     A["CLI / Colab"] --> B["EnvironmentManager + Config"]
     B --> C["LangGraph State Machine"]
@@ -25,7 +25,7 @@ flowchart TD
     D --> F["Question & Answer Agent"]
     E --> F
     F --> G["PDF Formatter / Exporter"]
-'''
+```
 
 The pipeline uses LangGraph to orchestrate three specialized LangChain agents:
 
