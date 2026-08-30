@@ -4,17 +4,15 @@ TIPS is a collaborative graduate-course project that generates role-specific tec
 
 **Team:** Emma Berry, Luca Chierotti, and Christina Wong
 
-The surviving notebook and report do not preserve a reliable per-person task breakdown. This folder therefore presents TIPS as a **shared team deliverable** and does not assign individual ownership of particular components.
-
 ## What the system does
 
 TIPS produces a formatted interview-preparation report containing:
 
-- a summary of the candidate's relevant skills and projects;
-- a researched company profile;
-- job-specific technical and behavioral questions;
-- sample answers and rationales; and
-- a final styled PDF report.
+- a summary of the candidate's relevant skills and projects
+- a researched company profile
+- job-specific technical and behavioral questions
+- sample answers and rationales
+- a final styled PDF report
 
 ## Architecture
 
@@ -40,18 +38,17 @@ The pipeline uses LangGraph to orchestrate three specialized LangChain agents:
 The project includes:
 
 - PDF, DOCX, and TXT ingestion;
-- a `DocumentCleaner` that removes repeated headers, URLs, disclaimers, page numbers, and other boilerplate;
-- recursive text chunking;
-- Hugging Face embeddings;
-- persistent ChromaDB collections; and
-- Maximal Marginal Relevance retrieval for diverse, high-relevance context.
+- a `DocumentCleaner` that removes repeated headers, URLs, disclaimers, page numbers, and other boilerplate
+- recursive text chunking
+- Hugging Face embeddings
+- persistent ChromaDB collections
+- Maximal Marginal Relevance retrieval for diverse, high-relevance context
 
 ## Implementation notes
 
-- The notebook imports PyTorch and checks CUDA availability; the retrieval pipeline uses Hugging Face embeddings through LangChain.
-- API credentials are discovered from local environment variables or external key files. No API keys are included in the repository.
-- The original implementation supports both a Colab/Google Drive workflow and a conventional command-line interface.
-- The notebook is a course-project snapshot rather than a maintained production package.
+- The notebook imports PyTorch and checks CUDA availability, but the retrieval pipeline uses Hugging Face embeddings through LangChain
+- BYO API Keys
+- The original implementation supports both a Colab/Google Drive workflow and a conventional command-line interface
 
 ## Documentation
 
