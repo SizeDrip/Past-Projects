@@ -12,6 +12,12 @@ Adapted an existing CPU C++/OpenCV sensor-fusion baseline into a CUDA C++ video 
 
 **Technologies:** C++, CUDA, OpenCV, Nsight Compute, CMake, KITTI data
 
+### [FPGA ML Acceleration with Vitis HLS](./FPGA_ML_Acceleration_Vitis_HLS/)
+
+Mapped a Keras **784→25→10 MNIST MLP** into a fixed-point C++ implementation for Vitis HLS and verified the resulting RTL with C/RTL co-simulation. The final lab implementation ran at **138 MHz** and reached **90.58% accuracy across 5,000 MNIST images**, while exposing a large initiation-interval bottleneck in the activation path that provides a useful hardware/software optimization case study.
+
+**Technologies:** C++, Vitis HLS, Keras, fixed-point arithmetic, FPGA synthesis, C/RTL co-simulation
+
 ### [Tomasulo Out-of-Order Simulator with Reorder Buffer](./Tomasulo%20with%20ROB/)
 
 Implemented an educational processor simulator in C with reservation stations, result forwarding, a reorder buffer, in-order retirement, speculative branch execution, and branch-misprediction recovery. The simulator models multiple functional-unit classes and configurable execution latencies while producing cycle-by-cycle traces.
